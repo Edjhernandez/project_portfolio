@@ -43,11 +43,20 @@ div.logo :nth-child(2) {
 }
 
 div.menubutton {
-  color: white;
   margin-right: 8px;
   align-items: center;
   width: 48px;
   height: 48px;
+  font-size: 48px;
+}
+
+div.menubutton span {
+  margin-right: 16px;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+  color: white;
 }
 
 span.material-symbols-outlined {

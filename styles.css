@@ -12,3 +12,30 @@ body {
 --mark-text2 : #ff8303;
 --text : #f0e3ca;
 }
+
+header {
+    background-color: var(--dark-bg);
+}
+
+div.topbar {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+div.logo {
+    display: flex;
+}
+
+div.logo p {
+  font-family: 'Impact','Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #FF8303;
+}
+
+div.logo :nth-child(2) {
+  color: var(--text);
+}

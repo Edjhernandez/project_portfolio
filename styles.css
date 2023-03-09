@@ -15,12 +15,13 @@ body {
 
 header {
     background-color: var(--dark-bg);
+    height: 622px;
 }
 
 div.topbar {
   display: flex;
   align-items: center;
-  margin-left: 8px;
+  margin-left: 20px;
   justify-content: space-between;
 }
 
@@ -34,7 +35,7 @@ div.logo p {
   font-weight: 400;
   font-size: 32px;
   line-height: 39px;
-  color: #FF8303;
+  color: var(--mark-text2)
 }
 
 div.logo :nth-child(2) {
@@ -47,11 +48,9 @@ div.menubutton {
   align-items: center;
   width: 48px;
   height: 48px;
-  
 }
 
 span.material-symbols-outlined {
-
   font-variation-settings:
   'FILL' 0,
   'wght' 700,
@@ -59,32 +58,31 @@ span.material-symbols-outlined {
   'opsz' 48
 }
 
-div.headline :nth-child(1) {
+div.headline {
   font-family: 'Inconsolata';
   font-style: normal;
+}
+
+div.headline :nth-child(1) {
   font-weight: 900;
   font-size: 40px;
   line-height: 42px;
   color: var(--mark-text2);
-  margin-left: 68px;
+  margin: 128px 0 0 68px;
 }
 
 div.headline :nth-child(2) {
-  font-family: 'Inconsolata';
-  font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 34px;
   color: var(--text);
-  margin-left: 68px;
+  margin: 16px 0 16px 68px;
 }
 
 div.headline :nth-child(3) {
-  font-family: 'Inconsolata';
-  font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 25px;
   color: var(--text);
-  margin: 0 68px;
+  margin: 0 68px 64px 68px;
 }

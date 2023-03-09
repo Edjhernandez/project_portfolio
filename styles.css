@@ -5,17 +5,17 @@ body {
   box-sizing: border-box;
 }
 
-:root {  /*color plan*/
---dark-bg : #1b1a17;
---light-bg : #1f1e1b;
---mark-text1 : #a35709;
---mark-text2 : #ff8303;
---text : #f0e3ca;
+:root {  /* color plan */
+  --dark-bg: #1b1a17;
+  --light-bg: #1f1e1b;
+  --mark-text1: #a35709;
+  --mark-text2: #ff8303;
+  --text: #f0e3ca;
 }
 
 header {
-    background-color: var(--dark-bg);
-    height: 622px;
+  background-color: var(--dark-bg);
+  height: 622px;
 }
 
 div.topbar {
@@ -26,16 +26,16 @@ div.topbar {
 }
 
 div.logo {
-    display: flex;
+  display: flex;
 }
 
 div.logo p {
-  font-family: 'Impact','Times New Roman', Times, serif;
+  font-family: 'Impact', 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 39px;
-  color: var(--mark-text2)
+  color: var(--mark-text2);
 }
 
 div.logo :nth-child(2) {
@@ -52,14 +52,14 @@ div.menubutton {
 
 span.material-symbols-outlined {
   font-variation-settings:
-  'FILL' 0,
-  'wght' 700,
-  'GRAD' 100,
-  'opsz' 48
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 100,
+    'opsz' 48;
 }
 
 div.headline {
-  font-family: 'Inconsolata';
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
 }
 

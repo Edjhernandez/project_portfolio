@@ -4,3 +4,11 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {  /*color plan*/
+--dark-bg : #1b1a17;
+--light-bg : #1f1e1b;
+--mark-text1 : #a35709;
+--mark-text2 : #ff8303;
+--text : #f0e3ca;
+}

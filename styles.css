@@ -34,7 +34,7 @@ div.logo p {
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;
-  line-height: 2.44rem;
+  line-height: 2.5rem;
   color: var(--mark-text2);
 }
 
@@ -42,19 +42,16 @@ div.logo :nth-child(2) {
   color: var(--text);
 }
 
-div.menubutton {
+button.menubutton {
   margin-right: 8px;
   align-items: center;
   width: 48px;
   height: 48px;
-  font-size: 3rem;
+  background-color:transparent;
+  border: none;
 }
 
-div.menubutton span {
-  margin-right: 16px;
-  align-items: center;
-  width: 48px;
-  height: 48px;
+button.menubutton span {
   font-size: 3rem;
   color: white;
 }

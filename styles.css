@@ -15,7 +15,7 @@ body {
 
 header {
   background-color: var(--dark-bg);
-  height: 622px;
+  height: 100vh;
 }
 
 div.topbar {
@@ -33,8 +33,8 @@ div.logo p {
   font-family: 'Impact', 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 39px;
+  font-size: 2rem;
+  line-height: 2.44rem;
   color: var(--mark-text2);
 }
 
@@ -47,7 +47,7 @@ div.menubutton {
   align-items: center;
   width: 48px;
   height: 48px;
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 div.menubutton span {
@@ -55,7 +55,7 @@ div.menubutton span {
   align-items: center;
   width: 48px;
   height: 48px;
-  font-size: 48px;
+  font-size: 3rem;
   color: white;
 }
 
@@ -74,7 +74,7 @@ div.headline {
 
 div.headline :nth-child(1) {
   font-weight: 900;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 42px;
   color: var(--mark-text2);
   margin: 128px 0 0 68px;
@@ -82,7 +82,7 @@ div.headline :nth-child(1) {
 
 div.headline :nth-child(2) {
   font-weight: 700;
-  font-size: 32px;
+  font-size: 2rem;
   line-height: 34px;
   color: var(--text);
   margin: 16px 0 16px 68px;
@@ -90,7 +90,7 @@ div.headline :nth-child(2) {
 
 div.headline :nth-child(3) {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 25px;
   color: var(--text);
   margin: 0 68px 64px 68px;

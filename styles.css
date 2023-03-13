@@ -4,3 +4,91 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {  /* color plan */
+  --dark-bg: #1b1a17;
+  --light-bg: #1f1e1b;
+  --mark-text1: #a35709;
+  --mark-text2: #ff8303;
+  --text: #f0e3ca;
+}
+
+header {
+  background-color: var(--dark-bg);
+  height: 100vh;
+}
+
+div.topbar {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  justify-content: space-between;
+}
+
+div.logo {
+  display: flex;
+}
+
+div.logo p {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--mark-text2);
+}
+
+div.logo :nth-child(2) {
+  color: var(--text);
+}
+
+button.menubutton {
+  margin-right: 8px;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+}
+
+button.menubutton span {
+  font-size: 3rem;
+  color: white;
+}
+
+span.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 100,
+    'opsz' 48;
+}
+
+div.headline {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+}
+
+div.headline :nth-child(1) {
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 42px;
+  color: var(--mark-text2);
+  margin: 128px 0 0 68px;
+}
+
+div.headline :nth-child(2) {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 34px;
+  color: var(--text);
+  margin: 16px 0 16px 68px;
+}
+
+div.headline :nth-child(3) {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 25px;
+  color: var(--text);
+  margin: 0 68px 64px 68px;
+}

@@ -31,6 +31,45 @@
             <p>Frontend Developer</p>
             <p>Frontend developer looking for ideas and projects for himself and others</p>
         </div>
+        <div class = 'boxcode'>
+            <p>let button_menu = document.querySelector(".header_button");<br>
+            let float_menu  = document.querySelector(".header_menu--float");<br>
+            <br>
+            let line_top   = document.querySelector(".header_button_line--<br>
+            top");<br>
+            let line_under = document.querySelector(".header_button_line--<br>
+            bottom");<br>
+            <br>
+            button_menu.isSelected = false;<br>
+            <br>
+            function addEffectWriting(element, time) {<br>
+            &nbsp;let element_array = element.innerText.split("");<br>
+            <br>
+            &nbsp;element.count     = 0;<br>
+            &nbsp;element.innerText = "";<br>
+            <br>
+            &nbsp;function writeSymbols() {<br>
+            &nbsp;&nbsp;element.innerText += element_array[element.count];<br>
+            &nbsp;&nbsp;element.count++;<br>
+            <br>
+            &nbsp;&nbsp;if (element.count &lt;= element_array.length) {<br>
+            &nbsp;&nbsp;&nbsp;setTimeout(() => {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;writeSymbols();<br>
+            &nbsp;&nbsp;&nbsp;}, time);<br>
+            &nbsp;&nbsp;} else if (element.count >= element_array.length) {<br>
+            &nbsp;&nbsp;&nbsp;element.count     = 0;<br>
+            &nbsp;&nbsp;&nbsp;element.innerText = "";<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;writeSymbols();<br>
+            &nbsp;&nbsp;}<br>
+            &nbsp;}<br>
+            &nbsp;writeSymbols();<br>
+            } ...</p>
+            
+
+
+
+        </div>
     </header>
     <main>
 

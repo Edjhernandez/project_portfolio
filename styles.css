@@ -15,18 +15,19 @@ body {
 
 header {
   background-color: var(--dark-bg);
-  height: 100vh;
+  height: 100%;
 }
 
 div.topbar {
   display: flex;
   align-items: center;
-  margin-left: 20px;
   justify-content: space-between;
+  height: 5rem;
 }
 
 div.logo {
   display: flex;
+  margin: 1rem 0.5rem;  
 }
 
 div.logo p {
@@ -43,10 +44,10 @@ div.logo :nth-child(2) {
 }
 
 button.menubutton {
-  margin-right: 8px;
+  margin-right: 0.5rem;
   align-items: center;
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   background-color: transparent;
   border: none;
 }
@@ -67,14 +68,15 @@ span.material-symbols-outlined {
 div.headline {
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
+  padding: 8rem 4.25rem;
 }
 
 div.headline :nth-child(1) {
   font-weight: 900;
   font-size: 2.5rem;
-  line-height: 42px;
+  line-height: 2.625rem;
   color: var(--mark-text2);
-  margin: 128px 0 0 68px;
+  margin: 0;
 }
 
 div.headline :nth-child(2) {
@@ -82,7 +84,7 @@ div.headline :nth-child(2) {
   font-size: 2rem;
   line-height: 34px;
   color: var(--text);
-  margin: 16px 0 16px 68px;
+  margin: 1rem 0;
 }
 
 div.headline :nth-child(3) {
@@ -90,5 +92,28 @@ div.headline :nth-child(3) {
   font-size: 1.5rem;
   line-height: 25px;
   color: var(--text);
-  margin: 0 68px 64px 68px;
+  margin: 0;
 }
+
+div.boxcode {
+  margin: 0 1.15rem;
+}
+
+div.boxcode p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: rgba(163, 87, 9, 0.5);
+  margin: 0;
+}
+
+/*div.boxcode :nth-child(2) {
+  margin: 0;
+  margin-left: 1rem;
+}
+
+div.boxcode :nth-child(3) {
+  margin: 0;
+  margin-left: 2rem;
+}*/

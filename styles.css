@@ -13,7 +13,8 @@ body {
   --text: #f0e3ca;
 }
 
-header {
+header,
+main {
   background-color: var(--dark-bg);
   height: 100%;
 }
@@ -27,7 +28,7 @@ div.topbar {
 
 div.logo {
   display: flex;
-  margin: 1rem 0.5rem;  
+  margin: 1rem 0.5rem;
 }
 
 div.logo p {
@@ -122,7 +123,6 @@ div.photolayer1 {
   position: absolute;
   z-index: 1;
   margin: auto;
-  
 }
 
 div.photolayer2 {
@@ -142,4 +142,69 @@ div.photolayer3 {
   border-radius: 80% 40% 20% 100% / 60% 60% 40% 40%;
   opacity: 0.4;
   position: relative;
+}
+
+div.aboutme {
+  padding: 12.5rem 4rem 4rem 4rem;
+}
+
+div.polygonicon {
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: auto;
+}
+
+div.aboutme p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: var(--text);
+}
+
+div.myskills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+div.myskills h2 {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: var(--mark-text2);
+}
+
+div.skill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 2rem;
+  margin: 0.5rem 0;
+  width: 18rem;
+  height: 3.75rem;
+  background: #21201d;
+  border-radius: 0.625rem;
+}
+
+div.skill img {
+  width: 1.8rem;
+  height: 2rem;
+}
+
+div.skill p {
+  width: 3.75rem;
+  height: 1.6rem;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: #fff;
+  padding: 0 1rem;
 }

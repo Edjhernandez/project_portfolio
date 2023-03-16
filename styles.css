@@ -208,3 +208,17 @@ div.skill p {
   color: #fff;
   padding: 0 1rem;
 }
+
+/*div.skill img:hover {
+  opacity: 0;
+}*/
+
+div.skill img.top {
+  position: absolute;
+  opacity: 0;
+}
+
+div.skill img.top:hover {
+  position: absolute;
+  opacity: 1;
+}

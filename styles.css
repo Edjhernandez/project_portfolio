@@ -167,7 +167,7 @@ div.aboutme p {
   color: var(--text);
 }
 
-/*div.myskills { /* box for all skills 
+div.myskills { /* box for all skills */ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,7 +185,7 @@ div.myskills h2 {
   margin: 1.25rem 0;
 }
 
-div.skill { /* box for each skill 
+div.skill { /* box for each skill */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -195,6 +195,11 @@ div.skill { /* box for each skill
   height: 3.75rem;
   background: #21201d;
   border-radius: 0.625rem;
+}
+
+div.myskill svg {
+  fill: #ffff;
+  mix-blend-mode: normal;
 }
 
 div.skill img {
@@ -223,7 +228,7 @@ div.skill img.top:hover {
   position: absolute;
   opacity: 1;
 }
-
+/*
 div.card { /* for works section 
   display: flex;
   flex-direction: column;

@@ -297,3 +297,7 @@ div.card button {
   color: var(--text);
   margin-bottom: 0.75em;
 }
+
+div.card img:hover {
+  opacity: 1;
+}

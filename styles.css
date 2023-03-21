@@ -382,16 +382,17 @@ div.formcontact { /* ************* form make contact *************** */
   justify-content: center;
   align-items: center;
   margin-bottom: 2em;
+  max-width: 850px;
 }
 
 div.formcontact form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: #21201d;
   border-radius: 0.625rem;
   width: 90%;
+  padding-top: 1em;
 }
 
 div.formcontact h2 {
@@ -408,4 +409,17 @@ div.formcontact form input {
   margin: 1em 0;
 }
 
+div.formcontact form label {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+  align-self: flex-start;
+  margin-left: 10%;
+}
 
+div.formcontact form :last-child {
+  height: 6rem;
+}

@@ -423,3 +423,26 @@ div.formcontact form label {
 div.formcontact form :last-child {
   height: 6rem;
 }
+
+div.buttoncontact {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div.buttoncontact button {
+  width: 10em;
+  height: 4em;
+  background: #32312e;
+  border-radius: 4px;
+  border-style: none;
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: var(--mark-text2);
+  margin-bottom: 1em;
+}

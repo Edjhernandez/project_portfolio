@@ -171,19 +171,19 @@
     </div>
     <div class="formcontact">
       <h2>Make Contact</h2>
-      <form>
+      <form id="formcontact">
         <label for="name">Name</label>
-        <input id='name' type="text">
+        <input name='name' id='name' type="text" maxlength="30" minlength="2" required>
         <label for="lastname">Last Name</label>
-        <input id='lastname' type="text">
+        <input id='lastname' name="lastname" type="text" maxlength="30" minlength="2" required>
         <label for="email">email</label>
-        <input id='name' type="email">
+        <input id='email' name="email" type="email" required>
         <label for="message">Message</label>
-        <input id='mesage' type="text">
+        <input id='message' name="message" type="text" required>
       </form>
     </div>
     <div class="buttoncontact">
-      <button type="submit">Contact</button>
+      <button type="submit" form="formcontact">Contact</button>
     </div>
     </footer>
 </body>

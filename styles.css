@@ -330,4 +330,49 @@ div.invitecontactme p {
   width: 80%;
 }
 
+div.socialnet {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+div.socialnet h2 {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4375rem;
+  color: var(--mark-text2);
+}
+
+div.socialnet a {
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5625rem;
+  color: var(--mark-text2);
+  margin: 1em 0 1em 0.5em;
+}
+
+div.socialnet li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+ /*flex-wrap: wrap;*/
+  flex-grow: 1;
+  width: 100%;
+}
+
+div.socialnet ul {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
 

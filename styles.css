@@ -301,3 +301,15 @@ div.card button {
 div.card img:hover {
   opacity: 1;
 }
+
+div.contact { /* **************** footer / contact me ******************* */
+  justify-content: center;
+  margin: 4em 0 2em 0;
+  width: 100%;
+}
+
+div.contact p { 
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+

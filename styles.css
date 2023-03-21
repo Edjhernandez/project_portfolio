@@ -313,3 +313,21 @@ div.contact p {
   line-height: 2.75rem;
 }
 
+div.invitecontactme {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+div.invitecontactme p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.3125rem;
+  color: var(--text);
+  width: 80%;
+}
+
+

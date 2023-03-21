@@ -375,4 +375,37 @@ div.socialnet ul {
   width: 80%;
 }
 
+div.formcontact { /* ************* form make contact *************** */
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+div.formcontact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #21201d;
+  border-radius: 0.625rem;
+  width: 90%;
+}
+
+div.formcontact h2 {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4375rem;
+  color: var(--mark-text2);
+}
+
+div.formcontact form input {
+  width: 80%;
+  margin: 1em 0;
+}
+
 

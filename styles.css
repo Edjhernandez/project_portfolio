@@ -379,10 +379,9 @@ div.formcontact { /* ************* form make contact *************** */
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-bottom: 2em;
-  max-width: 850px;
+  max-width: 650px;
 }
 
 div.formcontact form {
@@ -407,7 +406,14 @@ div.formcontact h2 {
 div.formcontact form input {
   width: 80%;
   margin: 1em 0;
-  text-align: left;
+  background-color: var(--dark-bg);
+  border-style: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
 }
 
 div.formcontact form label {
@@ -428,7 +434,7 @@ div.formcontact form :last-child {
 div.buttoncontact { /* ************* button contact me ************** */
   display: flex;
   width: 100%;
-  max-width: 850px;
+  max-width: 650px;
   flex-direction: row;
   justify-content: center;
 }

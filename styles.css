@@ -407,6 +407,7 @@ div.formcontact h2 {
 div.formcontact form input {
   width: 80%;
   margin: 1em 0;
+  text-align: justify;
 }
 
 div.formcontact form label {

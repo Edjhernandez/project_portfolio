@@ -308,7 +308,7 @@ div.contact { /* **************** footer / contact me ******************* */
   width: 100%;
 }
 
-div.contact p { 
+div.contact p {
   font-size: 2.25rem;
   line-height: 2.75rem;
 }
@@ -364,7 +364,6 @@ div.socialnet li {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
- /*flex-wrap: wrap;*/
   flex-grow: 1;
   width: 100%;
 }

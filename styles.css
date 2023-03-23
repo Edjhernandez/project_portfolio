@@ -301,3 +301,154 @@ div.card button {
 div.card img:hover {
   opacity: 1;
 }
+
+div.contact { /* **************** footer / contact me ******************* */
+  justify-content: center;
+  margin: 4em 0 2em 0;
+  width: 100%;
+}
+
+div.contact p {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+
+div.invitecontactme {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+div.invitecontactme p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.3125rem;
+  color: var(--text);
+  width: 80%;
+}
+
+div.socialnet {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+div.socialnet h2 {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4375rem;
+  color: var(--mark-text2);
+}
+
+div.socialnet a {
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5625rem;
+  color: var(--mark-text2);
+  margin: 1em 0 1em 0.5em;
+}
+
+div.socialnet li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 100%;
+}
+
+div.socialnet ul {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+div.formcontact { /* ************* form make contact *************** */
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  max-width: 650px;
+}
+
+div.formcontact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #21201d;
+  border-radius: 0.625rem;
+  width: 90%;
+  padding-top: 1em;
+}
+
+div.formcontact h2 {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4375rem;
+  color: var(--mark-text2);
+}
+
+div.formcontact form input {
+  width: 80%;
+  margin: 1em 0;
+  background-color: var(--dark-bg);
+  border-style: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+}
+
+div.formcontact form label {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+  align-self: flex-start;
+  margin-left: 10%;
+}
+
+div.formcontact form :last-child {
+  height: 6rem;
+}
+
+div.buttoncontact { /* ************* button contact me ************** */
+  display: flex;
+  width: 100%;
+  max-width: 650px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div.buttoncontact button {
+  width: 10em;
+  height: 4em;
+  background: #21201d;
+  border-radius: 4px;
+  border-style: none;
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: var(--mark-text2);
+  margin-bottom: 1em;
+}

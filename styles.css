@@ -452,3 +452,14 @@ div.buttoncontact button {
   color: var(--mark-text2);
   margin-bottom: 1em;
 }
+
+@media screen and (min-width: 704px) {
+  
+  button.menubutton {
+    display: none;
+  }
+
+  div.topbar {
+    justify-content: center;
+  }
+}

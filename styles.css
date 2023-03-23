@@ -68,6 +68,10 @@ span.material-symbols-outlined {
     'opsz' 48;
 }
 
+div.navbar {
+  display: none;
+}
+
 div.headline { /* **************** Presentation with name and description **************** */
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
@@ -453,13 +457,92 @@ div.buttoncontact button {
   margin-bottom: 1em;
 }
 
-@media screen and (min-width: 704px) {
+@media screen and (min-width: 704px) { /* ********* tablet version ********** */
   
-  button.menubutton {
+  button.menubutton { /* ****** top bar ******** */
     display: none;
   }
 
   div.topbar {
     justify-content: center;
   }
+
+  div.navbar { /* ********* nav bar ********** */
+    display: flex;
+    width: 100%;
+    margin-top: 3em;
+    justify-content: center;
+  }
+
+  div.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div.navbar ul li a {
+    text-decoration: none;
+    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3125rem;
+    text-transform: capitalize;
+    color: var(--text);
+  }
+
+  div.navbar ul li a:hover {
+    color: var(--mark-text2);
+  }
+  
+  div.headline { /* *************** head line ******************* */
+  margin: 9em 0 0 9em;
+  }
+
+  div.headline :nth-child(1) {
+    font-size: 4rem;
+  }
+  
+  div.headline :nth-child(2) {
+    font-size: 2.5rem;
+  }
+  
+  div.headline :nth-child(3) {
+    font-size: 1.25rem;
+  }
+
+  div.boxcode p { /* **************** profile photo **************** */
+    font-size: 1.125rem;
+  }
+
+  div.photolayer1 {
+    width: 24em;
+    height: 24em;
+  }
+  
+  div.photolayer2 {
+    width: 24em;
+    height: 24em;
+  }
+  
+  div.photolayer3 {
+    width: 24em;
+    height: 24em;
+  }
+
+  div.aboutme { /* ************ Icon with description about me ************** */
+    padding: 8em 3.25em 4em 3.25em;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  div.aboutme p {
+    margin-left: 1.25em;
+  }
+  
 }

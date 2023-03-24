@@ -180,8 +180,9 @@ div.myskills { /* ************** my skills **************** */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0;
+  margin: 2rem auto;
   width: 100%;
+  max-width: 550px;
 }
 
 div.myskills h2 {
@@ -544,5 +545,58 @@ div.buttoncontact button {
   div.aboutme p {
     margin-left: 1.25em;
   }
+
+  div.skillcards { /* ************** my skills **************** */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 80%;
+  }
+
+  div.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 14%;
+    margin: 1em;
+  }
+ 
+  div.skill svg {
+    fill: #fff;
+    width: 8rem;
+    height: 8rem;
+    margin: 3em 0 1em 0;
+  }
+
+  div.skill p {
+    font-size: 1.5rem;
+    margin: 0 0 2.5em 0;
+  }
+
+  div.myskills { /* ************** my works **************** */
+    width: 100%;
+    max-width: 750px;
+  }
   
+  div.card {
+    width: 50%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -196,6 +196,14 @@ div.myskills h2 {
   margin: 1em auto;
 }
 
+div.skillcards {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
 div.skill {
   display: flex;
   flex-direction: row;
@@ -323,6 +331,7 @@ div.invitecontactme {
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 div.invitecontactme p {
@@ -340,7 +349,8 @@ div.socialnet {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
+  margin: 2em auto;
+
 }
 
 div.socialnet h2 {
@@ -384,18 +394,25 @@ div.formcontact { /* ************* form make contact *************** */
   width: 100%;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
+  margin: 0 auto 2em auto;
   max-width: 650px;
 }
 
-div.formcontact form {
+div.formcontact form,
+div.identify,
+div.names {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #21201d;
   border-radius: 0.625rem;
   width: 90%;
-  padding-top: 1em;
+  padding-top: 0.5em;
+}
+
+div.identify,
+div.names {
+  width: 100%;
 }
 
 div.formcontact h2 {
@@ -420,6 +437,11 @@ div.formcontact form input {
   color: var(--text);
 }
 
+div.formcontact form input#message {
+  height: 6em;
+}
+
+
 div.formcontact form label {
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
@@ -431,16 +453,13 @@ div.formcontact form label {
   margin-left: 10%;
 }
 
-div.formcontact form :last-child {
-  height: 6rem;
-}
-
 div.buttoncontact { /* ************* button contact me ************** */
   display: flex;
   width: 100%;
   max-width: 650px;
   flex-direction: row;
   justify-content: center;
+  margin: 1.5em auto;
 }
 
 div.buttoncontact button {
@@ -502,7 +521,7 @@ div.buttoncontact button {
   }
   
   div.headline { /* *************** head line ******************* */
-  margin: 9em 0 0 9em;
+  margin: 9em 0 0 20%;
   }
 
   div.headline :nth-child(1) {
@@ -586,10 +605,57 @@ div.buttoncontact button {
     width: 50%;
   }
 
+  div.invitecontactme { /* ******** invite to contact me ******** */
+    width: 100%;
+    max-width: 739px;
+  }
 
+  div.invitecontactme p {
+    width: 50%;
+  }
 
+  div.socialnet { /* *********** social networks ********** */
+    width: 100%;
+    margin: 2em auto;
+    max-width: 710px;
+  }
 
+  div.socialnet ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 70%;
+  }
 
+  div.socialnet li {
+    width: 50%;
+  }
+
+  div.identify {
+    width: 100%;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  div.identify,
+  div.names {
+    width: 100%;
+  }
+  
+  div.formcontact {
+    max-width: 840px;
+  }
+
+  div.formcontact form input#message {
+    width: 93%;
+  }
+
+  div.formcontact form label#message {
+    margin-left: 1.3em;
+  }
 
 
 

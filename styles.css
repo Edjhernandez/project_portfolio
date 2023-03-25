@@ -157,6 +157,10 @@ div.photolayer3 {
   position: absolute;
 }
 
+div.desknavbar {
+  display: none;
+}
+
 div.aboutme { /* ************ Icon with description about me ************** */
   padding: 8em 4em 4em 4em;
 }
@@ -350,7 +354,6 @@ div.socialnet {
   flex-direction: column;
   align-items: center;
   margin: 2em auto;
-
 }
 
 div.socialnet h2 {
@@ -440,7 +443,6 @@ div.formcontact form input {
 div.formcontact form input#message {
   height: 6em;
 }
-
 
 div.formcontact form label {
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
@@ -660,41 +662,119 @@ div.buttoncontact button {
 
 @media screen and (min-width: 1200px) { /* ********* desktop version ********** */
 
-  div.topbar,
+  div.topbar, /* ********* hide top bar *********** */
   div.navbar {
     display: none;
   }
 
-  div.desk1 {
+  div.desk1 { /* *********** first view: headline and profileimage ************** */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    width: 100%;
   }
 
   div.headline,
   div.profileimage {
     width: 50%;
-    margin: 0;
+    margin: 1em auto;
     justify-content: center;
-  }
-
-  div.headline {
-   margin: 0;
+    align-self: center;
   }
 
   div.headline :nth-child(1) {
-    margin-left: 2.5em;
+    margin-left: 3em;
+    line-height: 1em;
+    font-size: 3rem;
   }
 
   div.headline :nth-child(2) {
-    margin-left: 4em;
+    margin-left: 3.5em;
   }
 
   div.headline :nth-child(3) {
     width: 60%;
-    margin-left: 8em;
+    margin-left: 7em;
   }
 
+  div.profileimage > div.boxcode p {
+    font-size: 0.9rem;
+  }
+
+  div.photolayer1,
+  div.photolayer2,
+  div.photolayer3 {
+    width: 20em;
+    height: 20em;
+  }
+
+  div.desknavbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 92vh;
+    /*z-index: 998;*/
+    background-color: var(--dark-bg);
+  }
+
+  div.desknavbar > div.logo {
+    margin-left: 10em;
+  }
+
+  div.navbar2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+
+  div.navbar2 ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    width: 75%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div.navbar2 ul li a {
+    text-decoration: none;
+    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3125rem;
+    text-transform: capitalize;
+    color: var(--text);
+  }
+
+  div.navbar2 ul li a:hover {
+    color: var(--mark-text2);
+  }
+
+  div.aboutme {
+    width: 80%;
+    margin: auto;
+  }
+
+  div.myskills {
+    max-width: 1500px;
+    width: 100%;
+  }
+
+  div.skillcards {
+    flex-wrap: nowrap;
+    flex-grow: 0;
+    width: 80%;
+  }
+
+  div.skill {
+    width: 11%;
+  }
 }

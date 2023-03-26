@@ -258,7 +258,14 @@ div.git svg :hover {
   fill: #f25234;
 }
 
-div.card { /* *********************** my works ******************* */
+div.works { /* *********************** my works ******************* */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.card { 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -401,6 +408,12 @@ div.formcontact { /* ************* form make contact *************** */
   max-width: 650px;
 }
 
+div.boxcontact {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
 div.formcontact form,
 div.identify,
 div.names {
@@ -411,6 +424,7 @@ div.names {
   border-radius: 0.625rem;
   width: 90%;
   padding-top: 0.5em;
+  margin: auto;
 }
 
 div.identify,
@@ -461,7 +475,7 @@ div.buttoncontact { /* ************* button contact me ************** */
   max-width: 650px;
   flex-direction: row;
   justify-content: center;
-  margin: 1.5em auto;
+  margin: 1.5em auto 0 auto;
 }
 
 div.buttoncontact button {
@@ -709,7 +723,7 @@ div.buttoncontact button {
     height: 20em;
   }
 
-  div.desknavbar {
+  div.desknavbar { /* ******** bottom navbar ********* */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -717,7 +731,7 @@ div.buttoncontact button {
     position: fixed;
     width: 100%;
     top: 92vh;
-    /*z-index: 998;*/
+    z-index: 3;
     background-color: var(--dark-bg);
   }
 
@@ -758,12 +772,12 @@ div.buttoncontact button {
     color: var(--mark-text2);
   }
 
-  div.aboutme {
+  div.aboutme { /* ******** about me with icon ********** */
     width: 80%;
     margin: auto;
   }
 
-  div.myskills {
+  div.myskills { /* ********** my skills section *********** */
     max-width: 1500px;
     width: 100%;
   }
@@ -776,5 +790,62 @@ div.buttoncontact button {
 
   div.skill {
     width: 11%;
+  }
+
+  div.works {
+    flex-direction: row;
+    width: 80%;
+  }
+
+  div.card {
+    margin: 1em;
+  }
+
+  footer { /* ********** footer contacts ********** */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /*justify-content: flex-start;*/
+    /*align-items: center;*/
+    margin-bottom: 5em;
+    
+  }
+
+  div.footerleft,
+  div.footeright {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  div.invitecontactme {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  div.invitecontactme p {
+    width: 100%;
+    margin: 0 2em;
+    text-align: center;
+  }
+
+  div.socialnet { /* *********** social networks ********** */
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  div.socialnet ul {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+
+  div.logo.contact {
+    margin-top: 1.7em;
+  }
+
+  div.boxcontact {
+    width: 100%;
   }
 }

@@ -549,6 +549,7 @@ div.buttoncontact button {
 
   div.headline :nth-child(3) {
     font-size: 1.25rem;
+    margin-right: 3em;
   }
 
   div.boxcode p { /* **************** profile photo **************** */

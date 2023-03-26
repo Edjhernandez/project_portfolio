@@ -105,7 +105,6 @@ div.headline :nth-child(3) {
   color: var(--text);
   margin: 0 0 4em 0;
   text-align: left;
-  /*width: 95%;*/
 }
 
 div.profileimage { /* *************** image with box code and profile photo ************* */
@@ -265,7 +264,7 @@ div.works { /* *********************** my works ******************* */
   align-items: center;
 }
 
-div.card { 
+div.card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -494,7 +493,7 @@ div.buttoncontact button {
 }
 
 @media screen and (min-width: 704px) { /* ********* tablet version ********** */
-  
+
   button.menubutton { /* ****** top bar ******** */
     display: none;
   }
@@ -535,19 +534,19 @@ div.buttoncontact button {
   div.navbar ul li a:hover {
     color: var(--mark-text2);
   }
-  
+
   div.headline { /* *************** head line ******************* */
-  margin: 9em 0 0 20%;
+    margin: 9em 0 0 20%;
   }
 
   div.headline :nth-child(1) {
     font-size: 4rem;
   }
-  
+
   div.headline :nth-child(2) {
     font-size: 2.5rem;
   }
-  
+
   div.headline :nth-child(3) {
     font-size: 1.25rem;
   }
@@ -560,12 +559,12 @@ div.buttoncontact button {
     width: 24em;
     height: 24em;
   }
-  
+
   div.photolayer2 {
     width: 24em;
     height: 24em;
   }
-  
+
   div.photolayer3 {
     width: 24em;
     height: 24em;
@@ -576,7 +575,7 @@ div.buttoncontact button {
     display: flex;
     flex-direction: row;
   }
-  
+
   div.aboutme p {
     margin-left: 1.25em;
   }
@@ -599,7 +598,7 @@ div.buttoncontact button {
     width: 14%;
     margin: 1em;
   }
- 
+
   div.skill svg {
     fill: #fff;
     width: 8rem;
@@ -616,7 +615,7 @@ div.buttoncontact button {
     width: 100%;
     max-width: 750px;
   }
-  
+
   div.card {
     width: 50%;
   }
@@ -660,7 +659,7 @@ div.buttoncontact button {
   div.names {
     width: 100%;
   }
-  
+
   div.formcontact {
     max-width: 840px;
   }
@@ -710,6 +709,12 @@ div.buttoncontact button {
   div.headline :nth-child(3) {
     width: 60%;
     margin-left: 7em;
+  }
+
+  div.invitecontactme p {
+    width: 100%;
+    margin: 0 2em;
+    text-align: center;
   }
 
   div.profileimage > div.boxcode p {
@@ -805,10 +810,7 @@ div.buttoncontact button {
     display: flex;
     flex-direction: row;
     width: 100%;
-    /*justify-content: flex-start;*/
-    /*align-items: center;*/
     margin-bottom: 5em;
-    
   }
 
   div.footerleft,
@@ -819,14 +821,8 @@ div.buttoncontact button {
   }
 
   div.invitecontactme {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
-  }
-
-  div.invitecontactme p {
-    width: 100%;
-    margin: 0 2em;
-    text-align: center;
   }
 
   div.socialnet { /* *********** social networks ********** */

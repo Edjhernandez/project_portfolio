@@ -501,6 +501,11 @@ div.buttoncontact button {
   }
 
   div.topbar {
+    flex-direction: column;
+  }
+
+    div.logo {
+    width: 100%;
     justify-content: center;
   }
 
@@ -508,9 +513,9 @@ div.buttoncontact button {
     display: flex;
     width: 100%;
     justify-content: center;
-    position: fixed;
+    /*position: fixed;
     top: 2.5em;
-    z-index: 999;
+    z-index: 999;*/
     background-color: var(--dark-bg);
   }
 
@@ -682,9 +687,22 @@ div.buttoncontact button {
 
 @media screen and (min-width: 1200px) { /* ********* desktop version ********** */ 
 
-  div.topbar, /* ********* hide top bar *********** */
+  div.topbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  div.logo {
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  div.logo :first-child {
+    margin-left: 5em;
+  }
+
   div.navbar {
-    display: none;
+    width: 50%;
   }
 
   div.desk1 { /* *********** first view: headline and profileimage ************** */ 
@@ -693,6 +711,7 @@ div.buttoncontact button {
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 4em;
   }
 
   div.headline,
@@ -735,57 +754,7 @@ div.buttoncontact button {
     height: 20em;
   }
 
-  div.desknavbar { /* ******** bottom navbar ********* */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    top: 90vh;
-    z-index: 3;
-    background-color: var(--dark-bg);
-    height: 10vh;
-  }
-
-  div.desknavbar > div.logo {
-    margin-left: 10em;
-  }
-
-  div.navbar2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-  }
-
-  div.navbar2 ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    padding: 0;
-    width: 75%;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  div.navbar2 ul li a {
-    text-decoration: none;
-    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 1.3125rem;
-    text-transform: capitalize;
-    color: var(--text);
-  }
-
-  div.navbar2 ul li a:hover {
-    color: var(--mark-text2);
-  }
-
-  div.aboutme { /* ******** about me with icon ********** */
+  div.aboutme { /* ******** about me with icon ********** */ 
     width: 80%;
     margin: auto;
   }
@@ -833,7 +802,7 @@ div.buttoncontact button {
     margin: 0 auto;
   }
 
-  div.socialnet { /* *********** social networks ********** */
+  div.socialnet { /* *********** social networks ********** */ 
     width: 100%;
     margin: 0 auto;
   }

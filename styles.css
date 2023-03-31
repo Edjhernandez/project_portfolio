@@ -405,7 +405,7 @@ div.formcontact { /* ************* form make contact *************** */
   width: 100%;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto 2em auto;
+  margin: 4em auto;
   max-width: 650px;
 }
 
@@ -639,12 +639,13 @@ div.buttoncontact button {
 
   div.invitecontactme p {
     width: 50%;
+    text-align: center;
   }
 
   div.socialnet { /* *********** social networks ********** */
     width: 100%;
     margin: 2em auto;
-    max-width: 710px;
+    max-width: 740px;
   }
 
   div.socialnet ul {
@@ -723,27 +724,15 @@ div.buttoncontact button {
   }
 
   div.headline :nth-child(1) {
-    margin-left: 3em;
     line-height: 1em;
     font-size: 3rem;
   }
 
-  div.headline :nth-child(2) {
-    margin-left: 3.5em;
-  }
-
   div.headline :nth-child(3) {
     width: 60%;
-    margin-left: 7em;
   }
 
-  div.invitecontactme p {
-    width: 100%;
-    margin: 0 2em;
-    text-align: center;
-  }
-
-  div.profileimage > div.boxcode p {
+    div.profileimage > div.boxcode p {
     font-size: 0.9rem;
   }
 
@@ -762,12 +751,13 @@ div.buttoncontact button {
   div.myskills { /* ********** my skills section *********** */
     max-width: 1500px;
     width: 100%;
+    margin: auto;
   }
 
   div.skillcards {
     flex-wrap: nowrap;
-    flex-grow: 0;
     width: 80%;
+    margin-bottom: 4em;
   }
 
   div.skill {
@@ -783,42 +773,79 @@ div.buttoncontact button {
     margin: 1em;
   }
 
-  footer { /* ********** footer contacts ********** */
+  div.boxcontact { /* *********** make contact ************* */
+    width: 100%;
+  }
+
+  div.lastbox { /* ********** footer contacts ********** */
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-bottom: 5em;
+    margin: 0 auto;
+    margin-bottom: 4em;
+    justify-content: center;
   }
 
-  div.footerleft,
-  div.footeright {
+  div.footer2 {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 30%;
   }
 
+  div.logo.contact {
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  div.logo.contact p {
+    margin: 0;
+  }
+   
   div.invitecontactme {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+  }
+  
+  div.invitecontactme p {
+    width: 60%;
+    text-align: justify;
   }
 
   div.socialnet { /* *********** social networks ********** */ 
-    width: 100%;
-    margin: 0 auto;
+    width: 40%;
+    max-width: 1500px;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  div.socialnet h2 {
+    margin: 0;
+    font-family: 'Inconsolata','Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.25em;
   }
 
   div.socialnet ul {
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
+    width: 90%;
+    margin-top: 1em;
   }
 
-  div.logo.contact {
-    margin-top: 1.7em;
+  div.socialnet ul li {
+    width: fit-content;
   }
 
-  div.boxcontact {
-    width: 100%;
-  }
+  div.socialnet ul div.left,
+  div.socialnet ul div.right {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+  } 
+
+  div.socialnet ul div.right {
+    width: 65%;
+  }    
 }

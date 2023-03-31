@@ -259,7 +259,7 @@ div.git svg :hover {
   fill: #f25234;
 }
 
-div.works { /* *********************** my works ******************* */ 
+div.works { /* *********************** my works ******************* */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -494,7 +494,7 @@ div.buttoncontact button {
   margin-bottom: 1em;
 }
 
-@media screen and (min-width: 420px) and (min-height: 420px)  { /* ********* tablet version ********** */
+@media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
 
   button.menubutton { /* ****** top bar ******** */
     display: none;
@@ -504,7 +504,7 @@ div.buttoncontact button {
     flex-direction: column;
   }
 
-    div.logo {
+  div.logo {
     width: 100%;
     justify-content: center;
   }
@@ -513,9 +513,6 @@ div.buttoncontact button {
     display: flex;
     width: 100%;
     justify-content: center;
-    /*position: fixed;
-    top: 2.5em;
-    z-index: 999;*/
     background-color: var(--dark-bg);
   }
 
@@ -544,7 +541,6 @@ div.buttoncontact button {
   div.navbar ul li a:hover {
     color: var(--mark-text2);
   }
-
 
   div.headline { /* *************** head line ******************* */
     margin-top: 9em;
@@ -597,7 +593,7 @@ div.buttoncontact button {
     width: 100%;
   }
 
-  div.skillcards { 
+  div.skillcards {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -655,11 +651,18 @@ div.buttoncontact button {
     align-items: center;
     flex-wrap: wrap;
     flex-grow: 1;
-    width: 70%;
+    width: 100%;
   }
 
   div.socialnet li {
-    width: 50%;
+    width: fit-content;
+  }
+
+  div.socialnet ul div.left,
+  div.socialnet ul div.right {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
   }
 
   div.identify { /* ********** Make contact ********** */
@@ -686,7 +689,7 @@ div.buttoncontact button {
   }
 }
 
-@media screen and (min-width: 1200px) { /* ********* desktop version ********** */ 
+@media screen and (min-width: 1200px) { /* ********* desktop version ********** */
 
   div.topbar {
     flex-direction: row;
@@ -706,13 +709,18 @@ div.buttoncontact button {
     width: 50%;
   }
 
-  div.desk1 { /* *********** first view: headline and profileimage ************** */ 
+  div.desk1 { /* *********** first view: headline and profileimage ************** */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin-top: 4em;
+  }
+
+  div.invitecontactme p {
+    width: 60%;
+    text-align: justify;
   }
 
   div.headline,
@@ -732,7 +740,11 @@ div.buttoncontact button {
     width: 60%;
   }
 
-    div.profileimage > div.boxcode p {
+  div.logo.contact p {
+    margin: 0;
+  }
+
+  div.profileimage > div.boxcode p {
     font-size: 0.9rem;
   }
 
@@ -743,7 +755,7 @@ div.buttoncontact button {
     height: 20em;
   }
 
-  div.aboutme { /* ******** about me with icon ********** */ 
+  div.aboutme { /* ******** about me with icon ********** */
     width: 80%;
     margin: auto;
   }
@@ -798,21 +810,12 @@ div.buttoncontact button {
     margin: 0;
   }
 
-  div.logo.contact p {
-    margin: 0;
-  }
-   
   div.invitecontactme {
     width: 100%;
     margin: 0 auto;
   }
-  
-  div.invitecontactme p {
-    width: 60%;
-    text-align: justify;
-  }
 
-  div.socialnet { /* *********** social networks ********** */ 
+  div.socialnet { /* *********** social networks ********** */
     width: 40%;
     max-width: 1500px;
     align-items: flex-start;
@@ -821,7 +824,7 @@ div.buttoncontact button {
 
   div.socialnet h2 {
     margin: 0;
-    font-family: 'Inconsolata','Times New Roman', Times, serif;
+    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
     font-style: normal;
     font-weight: 700;
     font-size: 2rem;
@@ -843,9 +846,9 @@ div.buttoncontact button {
     display: flex;
     flex-direction: column;
     width: 35%;
-  } 
+  }
 
   div.socialnet ul div.right {
     width: 65%;
-  }    
+  }
 }

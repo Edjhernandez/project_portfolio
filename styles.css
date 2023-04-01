@@ -9,6 +9,33 @@ footer {
   background-color: var(--dark-bg);
 }
 
+html::-webkit-scrollbar { /* ********** scrollbar customs *********** */
+  -webkit-appearance: none;
+}
+
+html::-webkit-scrollbar:vertical {
+  width:8px;
+}
+
+html::-webkit-scrollbar-button:increment,
+html::-webkit-scrollbar-button {
+  display: none;
+} 
+
+html::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #21201d;
+  border-radius: 20px;
+  border: 2px solid #a35709;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
 :root { /* ************* color plan **************** */
   --dark-bg: #1b1a17;
   --light-bg: #1f1e1b;
@@ -106,6 +133,23 @@ div.headline :nth-child(3) {
   font-size: 1.5rem;
   line-height: 25px;
   color: var(--text);
+}
+
+div.headline button {
+  border-style: none;
+  width: 40%;
+  min-width: 180px;
+  background-color: #21201d;
+  border-radius: 40px;
+  height: 4em;
+  margin-top: 1.5em;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  color: var(--mark-text2);
+  cursor: pointer;
 }
 
 div.profileimage { /* *************** image with box code and profile photo ************* */
@@ -492,6 +536,7 @@ div.buttoncontact button {
   line-height: 2rem;
   color: var(--mark-text2);
   margin-bottom: 1em;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
@@ -816,7 +861,7 @@ div.buttoncontact button {
   }
 
   div.socialnet { /* *********** social networks ********** */
-    width: 40%;
+    width: 25%;
     max-width: 1500px;
     align-items: flex-start;
     margin: 0;
@@ -833,7 +878,7 @@ div.buttoncontact button {
 
   div.socialnet ul {
     flex-direction: row;
-    width: 90%;
+    justify-content: flex-start;
     margin-top: 1em;
   }
 
@@ -845,10 +890,6 @@ div.buttoncontact button {
   div.socialnet ul div.right {
     display: flex;
     flex-direction: column;
-    width: 35%;
-  }
-
-  div.socialnet ul div.right {
-    width: 65%;
+    width: 50%;
   }
 }

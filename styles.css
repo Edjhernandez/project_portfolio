@@ -263,6 +263,17 @@ div.skill {
   border-radius: 0.625rem;
 }
 
+@keyframes shake-vertical {
+  0%,100% {transform:translateY(0)}
+  40%,60% {transform:translateY(-8px)}
+  80% {transform:translateY(8px)}
+}
+
+div.skill:hover {
+  animation-name: shake-vertical;
+  animation-duration: 0.5s;
+}
+
 div.skill svg {
   fill: #fff;
   mix-blend-mode: normal;

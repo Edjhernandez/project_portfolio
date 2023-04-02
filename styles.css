@@ -135,21 +135,19 @@ div.headline :nth-child(3) {
   color: var(--text);
 }
 
-div.headline button {
-  border-style: none;
-  width: 40%;
-  min-width: 180px;
+div.headline a {
+  padding: 1em 1.5em;
   background-color: #21201d;
   border-radius: 40px;
-  height: 4em;
   margin-top: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 2.5rem;
   color: var(--mark-text2);
-  cursor: pointer;
 }
 
 div.profileimage { /* *************** image with box code and profile photo ************* */

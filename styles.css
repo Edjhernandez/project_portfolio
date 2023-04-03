@@ -13,19 +13,6 @@ html::-webkit-scrollbar { /* ********** scrollbar customs *********** */
   -webkit-appearance: none;
 }
 
-html::-webkit-scrollbar:vertical {
-  width:8px;
-}
-
-html::-webkit-scrollbar-button:increment,
-html::-webkit-scrollbar-button {
-  display: none;
-} 
-
-html::-webkit-scrollbar:horizontal {
-  height: 10px;
-}
-
 html::-webkit-scrollbar-thumb {
   background-color: #21201d;
   border-radius: 20px;
@@ -33,7 +20,20 @@ html::-webkit-scrollbar-thumb {
 }
 
 html::-webkit-scrollbar-track {
-  border-radius: 10px;  
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-button:increment {
+  display: none;
+}
+
+html::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+html::-webkit-scrollbar:horizontal {
+  height: 10px;
 }
 
 :root { /* ************* color plan **************** */
@@ -150,17 +150,6 @@ div.headline a {
   color: var(--text);
 }
 
-@keyframes shadow-inset-center {
-  0%{box-shadow:inset 0 0 0 0 transparent}
-  100%{box-shadow:inset 0 0 100px 2px rgba(0,0,0,1); color:var(--mark-text2); border: 1px solid #ff8303}
-}
-
-div.headline a:hover {
-  animation-name: shadow-inset-center;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-
 div.profileimage { /* *************** image with box code and profile photo ************* */
   display: flex;
   align-items: center;
@@ -173,11 +162,6 @@ div.boxcode {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-@keyframes blur-in {
-  0%{filter:blur(120px);opacity:0}
-  100%{filter:blur(0);opacity:1}
 }
 
 div.boxcode p {
@@ -281,21 +265,6 @@ div.skill {
   border-radius: 0.625rem;
 }
 
-@keyframes jello-diagonal {
-  0%{transform:skew(0deg 0deg)}
-  30%{transform:skew(25deg 25deg)}
-  40%{transform:skew(-15deg,-15deg)}
-  50%{transform:skew(15deg,15deg)}
-  65%  {transform:skew(-5deg,-5deg)}
-  75%{transform:skew(5deg,5deg)}
-  100%{transform:skew(0deg 0deg)}
-}
-
-div.skill:hover {
-  animation-name: jello-diagonal;
-  animation-duration: 0.9s;
-}
-
 div.skill svg {
   fill: #fff;
   mix-blend-mode: normal;
@@ -353,17 +322,6 @@ div.card {
   cursor: pointer;
 }
 
-@keyframes slide-top {
-  0%{transform:translateY(0)}
-  100%{transform:translateY(-30px)}
-}
-
-div.card:hover {
-  animation-name: slide-top;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-
 div.card img {
   opacity: 0.1;
   width: 100%;
@@ -408,25 +366,6 @@ div.card button {
   border-style: none;
   color: var(--text);
   margin-bottom: 0.75em;
-}
-
-@keyframes flicker {
-  0%{opacity:1}
-  61.99%{opacity:1}
-  62%{opacity:0}
-  63%{opacity:0}
-  63.01%{opacity:1}
-  67.99%{opacity:1}
-  68%{opacity:0}
-  79%{opacity:0}
-  79.01%{opacity:1}
-  100%{opacity:0.1}
-}
-
-div.card img:hover {
-  animation-name: flicker;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
 }
 
 div.contact { /* **************** footer / contact me ******************** */
@@ -544,6 +483,11 @@ div.formcontact h2 {
   color: var(--mark-text2);
 }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--dark-bg) inset;
+  -webkit-text-fill-color: var(--text);
+}
+
 div.formcontact form input {
   width: 80%;
   margin: 1em 0;
@@ -555,11 +499,6 @@ div.formcontact form input {
   font-size: 1rem;
   line-height: 1rem;
   color: var(--text);
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px var(--dark-bg) inset;
-  -webkit-text-fill-color: var(--text);
 }
 
 div.formcontact form input#message {
@@ -586,16 +525,6 @@ div.buttoncontact { /* ************* button contact me ************** */
   margin: 1.5em auto 0 auto;
 }
 
-@keyframes rotate-horizontal-center {
-  0%{transform:rotateX(0)}100%
-  {transform:rotateX(-360deg)}
-}
-
-div.buttoncontact:hover {
-  animation-name: rotate-horizontal-center;
-  animation-duration: 1s;
-}
-
 div.buttoncontact button {
   width: 10em;
   height: 4em;
@@ -610,6 +539,81 @@ div.buttoncontact button {
   color: var(--mark-text2);
   margin-bottom: 1em;
   cursor: pointer;
+}
+
+@keyframes shadow-inset-center { /* **************** animations & transitions ***************** */
+  0% { box-shadow: inset 0 0 0 0 transparent; } /* ***** button get resume ****** */
+  100% { box-shadow: inset 0 0 100px 2px rgba(0, 0, 0, 1); }
+  100% { color: var(--mark-text2); }
+  100% { border: 1px solid #ff8303; }
+}
+
+div.headline a:hover { /* ***** button get resume ****** */
+  animation-name: shadow-inset-center;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blur-in { /* ******* for box code ********* */
+  0% { filter: blur(120px); }
+  0% { opacity: 0; }
+  100% { filter: blur(0); }
+  100% { opacity: 1; }
+}
+
+@keyframes jello-diagonal { /* ****** for skills cards ******** */
+  0% { transform: skew(0deg, 0deg); }
+  30% { transform: skew(25deg, 25deg); }
+  40% { transform: skew(-15deg, -15deg); }
+  50% { transform: skew(15deg, 15deg); }
+  65% { transform: skew(-5deg, -5deg); }
+  75% { transform: skew(5deg, 5deg); }
+  100% { transform: skew(0deg, 0deg); }
+}
+
+div.skill:hover {
+  animation-name: jello-diagonal;
+  animation-duration: 0.9s;
+}
+
+@keyframes slide-top { /* ******** for my works *********** */
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+
+div.card:hover {
+  animation-name: slide-top;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  61.99% { opacity: 1; }
+  62% { opacity: 0; }
+  63% { opacity: 0; }
+  63.01% { opacity: 1; }
+  67.99% { opacity: 1; }
+  68% { opacity: 0; }
+  79% { opacity: 0; }
+  79.01% { opacity: 1; }
+  100% { opacity: 0.1; }
+}
+
+div.card img:hover {
+  animation-name: flicker;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate-horizontal-center { /* ******* for button contact me ******** */
+  0% { transform: rotateX(0); }
+  100% { transform: rotateX(-360deg); }
+}
+
+div.buttoncontact:hover {
+  animation-name: rotate-horizontal-center;
+  animation-duration: 1s;
 }
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */

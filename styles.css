@@ -303,9 +303,28 @@ div.git svg :hover {
   fill: #f25234;
 }
 
-div.works { /* *********************** my works ******************* */
+div.works ul { /* *********************** my works ******************* */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+div.socialnet li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 100%;
+}
+
+div.works ul li {
+  list-style: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -428,16 +447,6 @@ div.socialnet a {
   line-height: 1.5625rem;
   color: var(--mark-text2);
   margin: 1em 0 1em 0.5em;
-}
-
-div.socialnet li {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 1;
-  width: 100%;
 }
 
 div.socialnet ul {
@@ -904,13 +913,15 @@ div.buttoncontact:hover {
     width: 11%;
   }
 
-  div.works {
+  div.works ul {
     flex-direction: row;
     width: 80%;
+    margin: 0 auto;
   }
 
   div.card {
     margin: 1em;
+    width: 100%;
   }
 
   div.boxcontact { /* *********** make contact ************* */

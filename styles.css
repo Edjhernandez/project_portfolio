@@ -9,6 +9,33 @@ footer {
   background-color: var(--dark-bg);
 }
 
+html::-webkit-scrollbar { /* ********** scrollbar customs *********** */
+  -webkit-appearance: none;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #21201d;
+  border-radius: 20px;
+  border: 2px solid #a35709;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-button:increment {
+  display: none;
+}
+
+html::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+html::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
 :root { /* ************* color plan **************** */
   --dark-bg: #1b1a17;
   --light-bg: #1f1e1b;
@@ -108,6 +135,21 @@ div.headline :nth-child(3) {
   color: var(--text);
 }
 
+div.headline a {
+  padding: 0.5em 1.5em;
+  background-color: #21201d;
+  border-radius: 40px;
+  margin-top: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 2.5rem;
+  color: var(--text);
+}
+
 div.profileimage { /* *************** image with box code and profile photo ************* */
   display: flex;
   align-items: center;
@@ -129,6 +171,8 @@ div.boxcode p {
   font-size: 0.75rem;
   color: rgba(163, 87, 9, 0.5);
   margin: 0 1em;
+  animation-name: blur-in;
+  animation-duration: 2s;
 }
 
 div.photolayer1 {
@@ -198,7 +242,7 @@ div.myskills h2 {
   line-height: 2.125rem;
   text-align: center;
   color: var(--mark-text2);
-  margin: 2em auto;
+  margin: 4em auto 2em auto;
 }
 
 div.skillcards {
@@ -259,9 +303,28 @@ div.git svg :hover {
   fill: #f25234;
 }
 
-div.works { /* *********************** my works ******************* */
+div.works ul { /* *********************** my works ******************* */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+div.socialnet li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 100%;
+}
+
+div.works ul li {
+  list-style: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -272,9 +335,11 @@ div.card {
   align-items: center;
   justify-content: center;
   width: 80%;
-  margin: 1rem 0;
   background: rgba(33, 32, 29, 0.98);
   position: relative;
+  cursor: pointer;
+  margin: 1em 0;
+  max-width: 400px;
 }
 
 div.card img {
@@ -283,6 +348,10 @@ div.card img {
   height: 100%;
   z-index: 1;
   position: absolute;
+}
+
+div.card h2 {
+  margin: 1em auto;
 }
 
 div.card h3 {
@@ -321,10 +390,6 @@ div.card button {
   border-style: none;
   color: var(--text);
   margin-bottom: 0.75em;
-}
-
-div.card img:hover {
-  opacity: 1;
 }
 
 div.contact { /* **************** footer / contact me ******************** */
@@ -384,16 +449,6 @@ div.socialnet a {
   margin: 1em 0 1em 0.5em;
 }
 
-div.socialnet li {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 1;
-  width: 100%;
-}
-
 div.socialnet ul {
   margin: 0;
   padding: 0;
@@ -440,6 +495,11 @@ div.formcontact h2 {
   font-size: 2rem;
   line-height: 2.4375rem;
   color: var(--mark-text2);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--dark-bg) inset;
+  -webkit-text-fill-color: var(--text);
 }
 
 div.formcontact form input {
@@ -492,6 +552,82 @@ div.buttoncontact button {
   line-height: 2rem;
   color: var(--mark-text2);
   margin-bottom: 1em;
+  cursor: pointer;
+}
+
+@keyframes shadow-inset-center { /* **************** animations & transitions ***************** */
+  0% { box-shadow: inset 0 0 0 0 transparent; } /* ***** button get resume ****** */
+  100% { box-shadow: inset 0 0 100px 2px rgba(0, 0, 0, 1); }
+  100% { color: var(--mark-text2); }
+  100% { border: 1px solid #ff8303; }
+}
+
+div.headline a:hover { /* ***** button get resume ****** */
+  animation-name: shadow-inset-center;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blur-in { /* ******* for box code ********* */
+  0% { filter: blur(120px); }
+  0% { opacity: 0; }
+  100% { filter: blur(0); }
+  100% { opacity: 1; }
+}
+
+@keyframes jello-diagonal { /* ****** for skills cards ******** */
+  0% { transform: skew(0deg, 0deg); }
+  30% { transform: skew(25deg, 25deg); }
+  40% { transform: skew(-15deg, -15deg); }
+  50% { transform: skew(15deg, 15deg); }
+  65% { transform: skew(-5deg, -5deg); }
+  75% { transform: skew(5deg, 5deg); }
+  100% { transform: skew(0deg, 0deg); }
+}
+
+div.skill:hover {
+  animation-name: jello-diagonal;
+  animation-duration: 0.9s;
+}
+
+@keyframes slide-top { /* ******** for my works *********** */
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+
+div.card:hover {
+  animation-name: slide-top;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  61.99% { opacity: 1; }
+  62% { opacity: 0; }
+  63% { opacity: 0; }
+  63.01% { opacity: 1; }
+  67.99% { opacity: 1; }
+  68% { opacity: 0; }
+  79% { opacity: 0; }
+  79.01% { opacity: 1; }
+  100% { opacity: 0.1; }
+}
+
+div.card img:hover {
+  animation-name: flicker;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate-horizontal-center { /* ******* for button contact me ******** */
+  0% { transform: rotateX(0); }
+  100% { transform: rotateX(-360deg); }
+}
+
+div.buttoncontact:hover {
+  animation-name: rotate-horizontal-center;
+  animation-duration: 1s;
 }
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
@@ -626,6 +762,7 @@ div.buttoncontact button {
 
   div.card { /* ************** my works **************** */
     width: 50%;
+    max-width: 700px;
   }
 
   div.invitecontactme { /* ******** invite to contact me ******** */
@@ -776,13 +913,15 @@ div.buttoncontact button {
     width: 11%;
   }
 
-  div.works {
+  div.works ul {
     flex-direction: row;
     width: 80%;
+    margin: 0 auto;
   }
 
   div.card {
     margin: 1em;
+    width: 100%;
   }
 
   div.boxcontact { /* *********** make contact ************* */
@@ -816,7 +955,7 @@ div.buttoncontact button {
   }
 
   div.socialnet { /* *********** social networks ********** */
-    width: 40%;
+    width: 25%;
     max-width: 1500px;
     align-items: flex-start;
     margin: 0;
@@ -833,7 +972,7 @@ div.buttoncontact button {
 
   div.socialnet ul {
     flex-direction: row;
-    width: 90%;
+    justify-content: flex-start;
     margin-top: 1em;
   }
 
@@ -845,10 +984,6 @@ div.buttoncontact button {
   div.socialnet ul div.right {
     display: flex;
     flex-direction: column;
-    width: 35%;
-  }
-
-  div.socialnet ul div.right {
-    width: 65%;
+    width: 50%;
   }
 }

@@ -1,0 +1,989 @@
+html,
+body,
+header,
+main,
+footer {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--dark-bg);
+}
+
+html::-webkit-scrollbar { /* ********** scrollbar customs *********** */
+  -webkit-appearance: none;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #21201d;
+  border-radius: 20px;
+  border: 2px solid #a35709;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-button,
+html::-webkit-scrollbar-button:increment {
+  display: none;
+}
+
+html::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+html::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+:root { /* ************* color plan **************** */
+  --dark-bg: #1b1a17;
+  --light-bg: #1f1e1b;
+  --mark-text1: #a35709;
+  --mark-text2: #ff8303;
+  --text: #f0e3ca;
+}
+
+div.topbar { /* **************** top bar with logo and burger menu ************* */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: var(--dark-bg);
+}
+
+div.logo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.5em;
+  align-items: center;
+}
+
+div.logo p {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--mark-text2);
+  margin: 0;
+}
+
+div.logo :nth-child(2) {
+  color: var(--text);
+}
+
+button.menubutton {
+  margin-right: 0.5rem;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+button.menubutton span {
+  font-size: 3rem;
+  color: white;
+}
+
+span.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 100,
+    'opsz' 48;
+}
+
+div.navbar {
+  display: none;
+}
+
+div.headline { /* **************** Presentation with name and description **************** */
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 9em 0 4em 0;
+}
+
+div.headline > * {
+  margin: 0.5em 10vw;
+}
+
+div.headline :nth-child(1) {
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: var(--mark-text2);
+}
+
+div.headline :nth-child(2) {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.125rem;
+  color: var(--text);
+}
+
+div.headline :nth-child(3) {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 25px;
+  color: var(--text);
+}
+
+div.headline a {
+  padding: 0.5em 1.5em;
+  background-color: #21201d;
+  border-radius: 40px;
+  margin-top: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 2.5rem;
+  color: var(--text);
+}
+
+div.profileimage { /* *************** image with box code and profile photo ************* */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+div.boxcode {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+div.boxcode p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: rgba(163, 87, 9, 0.5);
+  margin: 0 1em;
+  animation-name: blur-in;
+  animation-duration: 2s;
+}
+
+div.photolayer1 {
+  width: 14em;
+  height: 14em;
+  background-image: url('./images/Avatar-Maker.png');
+  background-size: 100%;
+  border-radius: 70% 35% 28% 90% / 90% 50% 80% 98%;
+  position: absolute;
+  z-index: 1;
+}
+
+div.photolayer2 {
+  width: 14em;
+  height: 14em;
+  background: rgba(255, 131, 3, 0.72);
+  border-radius: 80% 40% 80% 100% / 80% 70% 80% 90%;
+  opacity: 0.5;
+  position: absolute;
+}
+
+div.photolayer3 {
+  width: 14em;
+  height: 14em;
+  background: rgba(240, 227, 202, 0.72);
+  border-radius: 80% 40% 20% 100% / 60% 60% 40% 40%;
+  opacity: 0.4;
+  position: absolute;
+}
+
+div.desknavbar {
+  display: none;
+}
+
+div.aboutme { /* ************ Icon with description about me ************** */
+  padding: 8em 4em 4em 4em;
+}
+
+div.polygonicon {
+  width: 6.25em;
+  height: 6.25em;
+  margin: auto;
+}
+
+div.aboutme p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: var(--text);
+}
+
+div.myskills { /* ************** my skills **************** */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+div.myskills h2 {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: var(--mark-text2);
+  margin: 4em auto 2em auto;
+}
+
+div.skillcards {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+div.skill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  padding: 0 2rem;
+  margin: 0.5rem 0;
+  width: 60%;
+  background: #21201d;
+  border-radius: 0.625rem;
+}
+
+div.skill svg {
+  fill: #fff;
+  mix-blend-mode: normal;
+  width: 2.5em;
+  height: 2.5em;
+  align-items: center;
+}
+
+div.skill p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: #fff;
+  margin-left: 0.5em;
+}
+
+div.html5 svg :hover {
+  fill: #fc490b;
+}
+
+div.css3 svg :hover {
+  fill: #2196f4;
+}
+
+div.js svg :hover {
+  fill: #ffdf00;
+}
+
+div.scss svg :hover {
+  fill: #ca669b;
+}
+
+div.git svg :hover {
+  fill: #f25234;
+}
+
+div.works ul { /* *********************** my works ******************* */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+div.socialnet li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 100%;
+}
+
+div.works ul li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background: rgba(33, 32, 29, 0.98);
+  position: relative;
+  cursor: pointer;
+  margin: 1em 0;
+  max-width: 400px;
+}
+
+div.card img {
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+div.card h2 {
+  margin: 1em auto;
+}
+
+div.card h3 {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+  margin: 0.1rem;
+}
+
+div.card hr {
+  width: 75%;
+  height: 0;
+  border: 1px solid var(--mark-text1);
+  margin: 1rem 0 0 0;
+}
+
+div.card p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  color: var(--text);
+  margin: 1rem 3.15rem;
+}
+
+div.card button {
+  padding: 1rem 1.5rem;
+  width: 8.625rem;
+  height: 3.1875rem;
+  background: #32312e;
+  border-radius: 4px;
+  border-style: none;
+  color: var(--text);
+  margin-bottom: 0.75em;
+}
+
+div.contact { /* **************** footer / contact me ******************** */
+  justify-content: center;
+  margin: 4em 0 2em 0;
+  width: 100%;
+}
+
+div.contact p {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+}
+
+div.invitecontactme {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+div.invitecontactme p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.3125rem;
+  color: var(--text);
+  width: 80%;
+}
+
+div.socialnet {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em auto;
+}
+
+div.socialnet h2 {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4375rem;
+  color: var(--mark-text2);
+}
+
+div.socialnet a {
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5625rem;
+  color: var(--mark-text2);
+  margin: 1em 0 1em 0.5em;
+}
+
+div.socialnet ul {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+div.formcontact { /* ************* form make contact *************** */
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 4em auto;
+  max-width: 650px;
+}
+
+div.boxcontact {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+div.formcontact form,
+div.identify,
+div.names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #21201d;
+  border-radius: 0.625rem;
+  width: 90%;
+  padding-top: 0.5em;
+  margin: auto;
+}
+
+div.identify,
+div.names {
+  width: 100%;
+}
+
+div.formcontact h2 {
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.4375rem;
+  color: var(--mark-text2);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--dark-bg) inset;
+  -webkit-text-fill-color: var(--text);
+}
+
+div.formcontact form input {
+  width: 80%;
+  margin: 1em 0;
+  background-color: var(--dark-bg);
+  border-style: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+}
+
+div.formcontact form input#message {
+  height: 6em;
+}
+
+div.formcontact form label {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+  align-self: flex-start;
+  margin-left: 10%;
+}
+
+div.buttoncontact { /* ************* button contact me ************** */
+  display: flex;
+  width: 100%;
+  max-width: 650px;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1.5em auto 0 auto;
+}
+
+div.buttoncontact button {
+  width: 10em;
+  height: 4em;
+  background: #21201d;
+  border-radius: 4px;
+  border-style: none;
+  font-family: 'Impact', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: var(--mark-text2);
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+@keyframes shadow-inset-center { /* **************** animations & transitions ***************** */
+  0% { box-shadow: inset 0 0 0 0 transparent; } /* ***** button get resume ****** */
+  100% { box-shadow: inset 0 0 100px 2px rgba(0, 0, 0, 1); }
+  100% { color: var(--mark-text2); }
+  100% { border: 1px solid #ff8303; }
+}
+
+div.headline a:hover { /* ***** button get resume ****** */
+  animation-name: shadow-inset-center;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blur-in { /* ******* for box code ********* */
+  0% { filter: blur(120px); }
+  0% { opacity: 0; }
+  100% { filter: blur(0); }
+  100% { opacity: 1; }
+}
+
+@keyframes jello-diagonal { /* ****** for skills cards ******** */
+  0% { transform: skew(0deg, 0deg); }
+  30% { transform: skew(25deg, 25deg); }
+  40% { transform: skew(-15deg, -15deg); }
+  50% { transform: skew(15deg, 15deg); }
+  65% { transform: skew(-5deg, -5deg); }
+  75% { transform: skew(5deg, 5deg); }
+  100% { transform: skew(0deg, 0deg); }
+}
+
+div.skill:hover {
+  animation-name: jello-diagonal;
+  animation-duration: 0.9s;
+}
+
+@keyframes slide-top { /* ******** for my works *********** */
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+
+div.card:hover {
+  animation-name: slide-top;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  61.99% { opacity: 1; }
+  62% { opacity: 0; }
+  63% { opacity: 0; }
+  63.01% { opacity: 1; }
+  67.99% { opacity: 1; }
+  68% { opacity: 0; }
+  79% { opacity: 0; }
+  79.01% { opacity: 1; }
+  100% { opacity: 0.1; }
+}
+
+div.card img:hover {
+  animation-name: flicker;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate-horizontal-center { /* ******* for button contact me ******** */
+  0% { transform: rotateX(0); }
+  100% { transform: rotateX(-360deg); }
+}
+
+div.buttoncontact:hover {
+  animation-name: rotate-horizontal-center;
+  animation-duration: 1s;
+}
+
+@media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
+
+  button.menubutton { /* ****** top bar ******** */
+    display: none;
+  }
+
+  div.topbar {
+    flex-direction: column;
+  }
+
+  div.logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  div.navbar { /* ********* nav bar ********** */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: var(--dark-bg);
+  }
+
+  div.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div.navbar ul li a {
+    text-decoration: none;
+    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.3125rem;
+    text-transform: capitalize;
+    color: var(--text);
+  }
+
+  div.navbar ul li a:hover {
+    color: var(--mark-text2);
+  }
+
+  div.headline { /* *************** head line ******************* */
+    margin-top: 9em;
+    width: 100%;
+  }
+
+  div.headline :nth-child(1) {
+    font-size: 4rem;
+  }
+
+  div.headline :nth-child(2) {
+    font-size: 2.5rem;
+  }
+
+  div.headline :nth-child(3) {
+    font-size: 1.25rem;
+    margin-right: 3em;
+  }
+
+  div.boxcode p { /* **************** profile photo **************** */
+    font-size: 1.125rem;
+  }
+
+  div.photolayer1 {
+    width: 24em;
+    height: 24em;
+  }
+
+  div.photolayer2 {
+    width: 24em;
+    height: 24em;
+  }
+
+  div.photolayer3 {
+    width: 24em;
+    height: 24em;
+  }
+
+  div.aboutme { /* ************ Icon with description about me ************** */
+    padding: 8em 3.25em 4em 3.25em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  div.aboutme p {
+    margin-left: 1.25em;
+  }
+
+  div.myskills { /* ************** my skills **************** */
+    width: 100%;
+  }
+
+  div.skillcards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  div.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    margin: 1em;
+  }
+
+  div.skill svg {
+    fill: #fff;
+    width: 8rem;
+    height: 8rem;
+    margin: 3em 0 1em 0;
+  }
+
+  div.skill p {
+    font-size: 1.5rem;
+    margin: 0 0 2.5em 0;
+  }
+
+  div.card { /* ************** my works **************** */
+    width: 50%;
+    max-width: 700px;
+  }
+
+  div.invitecontactme { /* ******** invite to contact me ******** */
+    width: 100%;
+    max-width: 739px;
+  }
+
+  div.invitecontactme p {
+    width: 50%;
+    text-align: center;
+  }
+
+  div.socialnet { /* *********** social networks ********** */
+    width: 100%;
+    margin: 2em auto;
+    max-width: 740px;
+  }
+
+  div.socialnet ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  div.socialnet li {
+    width: fit-content;
+  }
+
+  div.socialnet ul div.left,
+  div.socialnet ul div.right {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+
+  div.identify { /* ********** Make contact ********** */
+    width: 100%;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  div.identify,
+  div.names {
+    width: 100%;
+  }
+
+  div.formcontact {
+    max-width: 840px;
+  }
+
+  div.formcontact form input#message {
+    width: 93%;
+  }
+
+  div.formcontact form label#message {
+    margin-left: 1.3em;
+  }
+}
+
+@media screen and (min-width: 1200px) { /* ********* desktop version ********** */
+
+  div.topbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  div.logo {
+    width: 50%;
+    justify-content: flex-start;
+  }
+
+  div.logo :first-child {
+    margin-left: 5em;
+  }
+
+  div.navbar {
+    width: 50%;
+  }
+
+  div.desk1 { /* *********** first view: headline and profileimage ************** */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 4em;
+  }
+
+  div.invitecontactme p {
+    width: 60%;
+    text-align: justify;
+  }
+
+  div.headline,
+  div.profileimage {
+    width: 50%;
+    margin: 1em auto;
+    justify-content: center;
+    align-self: center;
+  }
+
+  div.headline :nth-child(1) {
+    line-height: 1em;
+    font-size: 3rem;
+  }
+
+  div.headline :nth-child(3) {
+    width: 60%;
+  }
+
+  div.logo.contact p {
+    margin: 0;
+  }
+
+  div.profileimage > div.boxcode p {
+    font-size: 0.9rem;
+  }
+
+  div.photolayer1,
+  div.photolayer2,
+  div.photolayer3 {
+    width: 20em;
+    height: 20em;
+  }
+
+  div.aboutme { /* ******** about me with icon ********** */
+    width: 80%;
+    margin: auto;
+  }
+
+  div.myskills { /* ********** my skills section *********** */
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+  }
+
+  div.skillcards {
+    flex-wrap: nowrap;
+    width: 80%;
+    margin-bottom: 4em;
+  }
+
+  div.skill {
+    width: 11%;
+  }
+
+  div.works ul {
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  div.card {
+    margin: 1em;
+    width: 100%;
+  }
+
+  div.boxcontact { /* *********** make contact ************* */
+    width: 100%;
+  }
+
+  div.lastbox { /* ********** footer contacts ********** */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+    justify-content: center;
+  }
+
+  div.footer2 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+  }
+
+  div.logo.contact {
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  div.invitecontactme {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  div.socialnet { /* *********** social networks ********** */
+    width: 25%;
+    max-width: 1500px;
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  div.socialnet h2 {
+    margin: 0;
+    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.25em;
+  }
+
+  div.socialnet ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 1em;
+  }
+
+  div.socialnet ul li {
+    width: fit-content;
+  }
+
+  div.socialnet ul div.left,
+  div.socialnet ul div.right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+}

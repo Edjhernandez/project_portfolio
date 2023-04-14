@@ -650,7 +650,7 @@ div.buttoncontact:hover {
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
 
-  button { /* ****** top bar ******** */
+  div.topbar button { /* ****** top bar ******** */
     display: none;
   }
 
@@ -867,11 +867,6 @@ div.buttoncontact:hover {
     width: 100%;
     margin-top: 4em;
   }
-
-  /* div.invitecontactme p {
-    width: 60%;
-    text-align: justify;
-  } */
 
   div.headline,
   div.profileimage {

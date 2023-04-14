@@ -948,37 +948,33 @@ div.buttoncontact:hover {
   div.lastbox { /* ********** footer contacts ********** */
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 75%;
     margin: 0 auto;
     margin-bottom: 4em;
     justify-content: center;
     max-width: 1500px;
+    align-items: center;
   }
 
   div.footer2 {
     display: flex;
     flex-direction: column;
-    width: 50%;
     align-items: flex-end;
-    margin: 0;
   }
 
   div.contact {
-    width: 45%;
-    justify-content: center;
-    margin: 0;
+    width: 40%;
+    margin: 0.75em 1.25em 0 0;
   }
 
   div.invitecontactme {
-    width: 35%;
+    width: 40%;
     justify-content: flex-end;
     margin: 0;
     margin-right: 2em;
   }
 
   div.socialnet { /* *********** social networks ********** */
-    width: 50%;
-    max-width: 1500px;
     align-items: flex-start;
     margin: 0;
   }
@@ -993,7 +989,7 @@ div.buttoncontact:hover {
   }
 
   div.socialnet ul {
-    width: 70%;
+    width: 60%;
     margin: 0;
   }
 

@@ -336,8 +336,8 @@ div.socialnet li {
   align-items: center;
   justify-content: flex-start;
   flex-grow: 1;
-  width: 100%;
-  margin-left: 4em;
+  width: 50%;
+  margin-left: 2em;
 }
 
 div.works ul li {
@@ -353,11 +353,13 @@ div.card {
   align-items: center;
   justify-content: center;
   width: 80%;
+  height: auto;
   background: rgba(33, 32, 29, 0.98);
   position: relative;
   cursor: pointer;
   margin: 1em 0;
-  max-width: 400px;
+  min-width: 320px;
+  max-height: 320px;
 }
 
 div.card img {
@@ -397,6 +399,7 @@ div.card p {
   line-height: 1.125rem;
   color: var(--text);
   margin: 1rem 3.15rem;
+  overflow: hidden;
 }
 
 div.card button {
@@ -437,6 +440,7 @@ div.invitecontactme p {
   line-height: 1.3125rem;
   color: var(--text);
   width: 80%;
+  text-align: justify;
 }
 
 div.socialnet {
@@ -554,7 +558,7 @@ div.buttoncontact { /* ************* button contact me ************** */
   max-width: 650px;
   flex-direction: row;
   justify-content: center;
-  margin: 1.5em auto 0 auto;
+  margin: 1.5em auto;
 }
 
 div.buttoncontact button {
@@ -569,8 +573,8 @@ div.buttoncontact button {
   font-size: 1rem;
   line-height: 2rem;
   color: var(--mark-text2);
-  margin-bottom: 1em;
   cursor: pointer;
+  align-items: center;
 }
 
 @keyframes shadow-inset-center { /* **************** animations & transitions ***************** */

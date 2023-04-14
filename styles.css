@@ -76,24 +76,36 @@ div.logo :nth-child(2) {
   color: var(--text);
 }
 
-button.menubutton {
-  margin-right: 0.5rem;
-  align-items: center;
-  background-color: transparent;
-  border: none;
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3rem;
+  border: 0;
+  background: transparent;
+  gap: 0.65rem;
 }
 
-button.menubutton span {
-  font-size: 3rem;
-  color: white;
+button > div {
+  background: white;
+  height: 4px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: left;
 }
 
-span.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 700,
-    'GRAD' 100,
-    'opsz' 48;
+button:hover div:first-child {
+  transform: rotate(45deg);
+}
+
+button:hover div:nth-child(2) {
+  opacity: 0;
+}
+
+button:hover div:last-child {
+  transform: rotate(-45deg);
 }
 
 div.navbar {
@@ -217,6 +229,11 @@ div.polygonicon {
   margin: auto;
 }
 
+div.polygonicon img {
+  width: 6.25em;
+  height: 6.25em;
+}
+
 div.aboutme p {
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
@@ -320,6 +337,7 @@ div.socialnet li {
   justify-content: flex-start;
   flex-grow: 1;
   width: 100%;
+  margin-left: 4em;
 }
 
 div.works ul li {
@@ -632,7 +650,7 @@ div.buttoncontact:hover {
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
 
-  button.menubutton { /* ****** top bar ******** */
+  button { /* ****** top bar ******** */
     display: none;
   }
 
@@ -719,6 +737,7 @@ div.buttoncontact:hover {
     padding: 8em 3.25em 4em 3.25em;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   div.aboutme p {
@@ -778,28 +797,22 @@ div.buttoncontact:hover {
   div.socialnet { /* *********** social networks ********** */
     width: 100%;
     margin: 2em auto;
-    max-width: 740px;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
   }
 
   div.socialnet ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    flex-grow: 1;
-    width: 100%;
+    width: 60%;
+    margin: auto;
   }
 
   div.socialnet li {
-    width: fit-content;
-  }
-
-  div.socialnet ul div.left,
-  div.socialnet ul div.right {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
+    width: 34%;
+    margin: 0;
   }
 
   div.identify { /* ********** Make contact ********** */
@@ -855,10 +868,10 @@ div.buttoncontact:hover {
     margin-top: 4em;
   }
 
-  div.invitecontactme p {
+  /* div.invitecontactme p {
     width: 60%;
     text-align: justify;
-  }
+  } */
 
   div.headline,
   div.profileimage {
@@ -875,6 +888,10 @@ div.buttoncontact:hover {
 
   div.headline :nth-child(3) {
     width: 60%;
+  }
+
+  div.invitecontactme p {
+    width: 100%;
   }
 
   div.logo.contact p {
@@ -935,27 +952,32 @@ div.buttoncontact:hover {
     margin: 0 auto;
     margin-bottom: 4em;
     justify-content: center;
+    max-width: 1500px;
   }
 
   div.footer2 {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 50%;
+    align-items: flex-end;
+    margin: 0;
   }
 
-  div.logo.contact {
-    width: 100%;
+  div.contact {
+    width: 45%;
     justify-content: center;
     margin: 0;
   }
 
   div.invitecontactme {
-    width: 100%;
-    margin: 0 auto;
+    width: 35%;
+    justify-content: flex-end;
+    margin: 0;
+    margin-right: 2em;
   }
 
   div.socialnet { /* *********** social networks ********** */
-    width: 25%;
+    width: 50%;
     max-width: 1500px;
     align-items: flex-start;
     margin: 0;
@@ -971,19 +993,11 @@ div.buttoncontact:hover {
   }
 
   div.socialnet ul {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 1em;
+    width: 70%;
+    margin: 0;
   }
 
   div.socialnet ul li {
-    width: fit-content;
-  }
-
-  div.socialnet ul div.left,
-  div.socialnet ul div.right {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    width: 34%;
   }
 }

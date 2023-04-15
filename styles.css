@@ -76,24 +76,36 @@ div.logo :nth-child(2) {
   color: var(--text);
 }
 
-button.menubutton {
-  margin-right: 0.5rem;
-  align-items: center;
-  background-color: transparent;
-  border: none;
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3rem;
+  border: 0;
+  background: transparent;
+  gap: 0.65rem;
 }
 
-button.menubutton span {
-  font-size: 3rem;
-  color: white;
+button > div {
+  background: white;
+  height: 4px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: left;
 }
 
-span.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 700,
-    'GRAD' 100,
-    'opsz' 48;
+button:hover div:first-child {
+  transform: rotate(45deg);
+}
+
+button:hover div:nth-child(2) {
+  opacity: 0;
+}
+
+button:hover div:last-child {
+  transform: rotate(-45deg);
 }
 
 div.navbar {
@@ -178,7 +190,7 @@ div.boxcode p {
 div.photolayer1 {
   width: 14em;
   height: 14em;
-  background-image: url('./images/Avatar-Maker.png');
+  background-image: url('./images/Avatar-Maker.webp');
   background-size: 100%;
   border-radius: 70% 35% 28% 90% / 90% 50% 80% 98%;
   position: absolute;
@@ -215,6 +227,11 @@ div.polygonicon {
   width: 6.25em;
   height: 6.25em;
   margin: auto;
+}
+
+div.polygonicon img {
+  width: 6.25em;
+  height: 6.25em;
 }
 
 div.aboutme p {
@@ -319,7 +336,8 @@ div.socialnet li {
   align-items: center;
   justify-content: flex-start;
   flex-grow: 1;
-  width: 100%;
+  width: 50%;
+  margin-left: 2em;
 }
 
 div.works ul li {
@@ -335,11 +353,13 @@ div.card {
   align-items: center;
   justify-content: center;
   width: 80%;
+  height: auto;
   background: rgba(33, 32, 29, 0.98);
   position: relative;
   cursor: pointer;
   margin: 1em 0;
-  max-width: 400px;
+  min-width: 320px;
+  max-height: 320px;
 }
 
 div.card img {
@@ -379,6 +399,7 @@ div.card p {
   line-height: 1.125rem;
   color: var(--text);
   margin: 1rem 3.15rem;
+  overflow: hidden;
 }
 
 div.card button {
@@ -419,6 +440,7 @@ div.invitecontactme p {
   line-height: 1.3125rem;
   color: var(--text);
   width: 80%;
+  text-align: justify;
 }
 
 div.socialnet {
@@ -536,7 +558,7 @@ div.buttoncontact { /* ************* button contact me ************** */
   max-width: 650px;
   flex-direction: row;
   justify-content: center;
-  margin: 1.5em auto 0 auto;
+  margin: 1.5em auto;
 }
 
 div.buttoncontact button {
@@ -551,8 +573,8 @@ div.buttoncontact button {
   font-size: 1rem;
   line-height: 2rem;
   color: var(--mark-text2);
-  margin-bottom: 1em;
   cursor: pointer;
+  align-items: center;
 }
 
 @keyframes shadow-inset-center { /* **************** animations & transitions ***************** */
@@ -632,7 +654,7 @@ div.buttoncontact:hover {
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
 
-  button.menubutton { /* ****** top bar ******** */
+  div.topbar button { /* ****** top bar ******** */
     display: none;
   }
 
@@ -719,6 +741,7 @@ div.buttoncontact:hover {
     padding: 8em 3.25em 4em 3.25em;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   div.aboutme p {
@@ -778,28 +801,22 @@ div.buttoncontact:hover {
   div.socialnet { /* *********** social networks ********** */
     width: 100%;
     margin: 2em auto;
-    max-width: 740px;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
   }
 
   div.socialnet ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    flex-grow: 1;
-    width: 100%;
+    width: 60%;
+    margin: auto;
   }
 
   div.socialnet li {
-    width: fit-content;
-  }
-
-  div.socialnet ul div.left,
-  div.socialnet ul div.right {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
+    width: 34%;
+    margin: 0;
   }
 
   div.identify { /* ********** Make contact ********** */
@@ -855,11 +872,6 @@ div.buttoncontact:hover {
     margin-top: 4em;
   }
 
-  div.invitecontactme p {
-    width: 60%;
-    text-align: justify;
-  }
-
   div.headline,
   div.profileimage {
     width: 50%;
@@ -875,6 +887,10 @@ div.buttoncontact:hover {
 
   div.headline :nth-child(3) {
     width: 60%;
+  }
+
+  div.invitecontactme p {
+    width: 100%;
   }
 
   div.logo.contact p {
@@ -931,32 +947,33 @@ div.buttoncontact:hover {
   div.lastbox { /* ********** footer contacts ********** */
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 75%;
     margin: 0 auto;
     margin-bottom: 4em;
     justify-content: center;
+    max-width: 1500px;
+    align-items: center;
   }
 
   div.footer2 {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    align-items: flex-end;
   }
 
-  div.logo.contact {
-    width: 100%;
-    justify-content: center;
-    margin: 0;
+  div.contact {
+    width: 40%;
+    margin: 0.75em 1.25em 0 0;
   }
 
   div.invitecontactme {
-    width: 100%;
-    margin: 0 auto;
+    width: 40%;
+    justify-content: flex-end;
+    margin: 0;
+    margin-right: 2em;
   }
 
   div.socialnet { /* *********** social networks ********** */
-    width: 25%;
-    max-width: 1500px;
     align-items: flex-start;
     margin: 0;
   }
@@ -971,19 +988,11 @@ div.buttoncontact:hover {
   }
 
   div.socialnet ul {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 1em;
+    width: 60%;
+    margin: 0;
   }
 
   div.socialnet ul li {
-    width: fit-content;
-  }
-
-  div.socialnet ul div.left,
-  div.socialnet ul div.right {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    width: 34%;
   }
 }

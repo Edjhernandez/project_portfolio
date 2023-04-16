@@ -76,24 +76,24 @@ div.logo :nth-child(2) {
   color: var(--text);
 }
 
-button {
+button.burger {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 3.5rem;
-  height: 3rem;
+  height: 3.5rem;
   border: 0;
   background: transparent;
   gap: 0.65rem;
 }
 
-button > div {
+button.burger > div {
   background: white;
   height: 4px;
-  width: 100%;
+  width: 90%;
   border-radius: 5px;
-  transition: all 0.5s;
-  transform-origin: left;
+  transition: all 0.4s;
+  transform-origin: 0;
 }
 
 button:hover div:first-child {
@@ -102,6 +102,7 @@ button:hover div:first-child {
 
 button:hover div:nth-child(2) {
   opacity: 0;
+  margin-left: -3.5em;
 }
 
 button:hover div:last-child {
@@ -110,6 +111,19 @@ button:hover div:last-child {
 
 div.navbar {
   display: none;
+}
+
+div.menu {
+  background: var(--light-bg);
+  position: fixed;
+  width: 100%;
+  top: 3.25em;
+  z-index: 998;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 div.headline { /* **************** Presentation with name and description **************** */

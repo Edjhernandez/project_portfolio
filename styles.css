@@ -53,6 +53,7 @@ div.topbar { /* **************** top bar with logo and burger menu *************
   z-index: 999;
   width: 100%;
   background-color: var(--dark-bg);
+  flex-wrap: wrap;
 }
 
 div.logo {
@@ -87,43 +88,88 @@ button.burger {
   gap: 0.65rem;
 }
 
-button.burger > div {
+button.burger > span {
+  display: block;
   background: white;
   height: 4px;
   width: 90%;
   border-radius: 5px;
-  transition: all 0.4s;
+  transition: all 0.25s;
   transform-origin: 0;
 }
 
-button:hover div:first-child {
+.activeline1 {
   transform: rotate(45deg);
 }
 
-button:hover div:nth-child(2) {
+.activeline2 {
   opacity: 0;
   margin-left: -3.5em;
 }
 
-button:hover div:last-child {
+.activeline3 {
   transform: rotate(-45deg);
 }
 
-div.navbar {
+nav.navbar {
   display: none;
 }
 
-div.menu {
-  background: var(--light-bg);
-  position: fixed;
+.menu {
+  background-color: #21201d;
   width: 100%;
-  top: 3.25em;
-  z-index: 998;
-  border-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 4em auto;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+.menu ul li {
+  margin: 3em auto;
+}
+
+div.headline a {
+  padding: 0.5em 1.5em;
+  background-color: #21201d;
+  border-radius: 40px;
+  margin-top: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 2.5rem;
+  color: var(--text);
+}
+
+div.socialnet a {
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5625rem;
+  color: var(--mark-text2);
+  margin: 1em 0 1em 0.5em;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3125rem;
+  text-transform: capitalize;
+  color: var(--text);
 }
 
 div.headline { /* **************** Presentation with name and description **************** */
@@ -158,21 +204,6 @@ div.headline :nth-child(3) {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 25px;
-  color: var(--text);
-}
-
-div.headline a {
-  padding: 0.5em 1.5em;
-  background-color: #21201d;
-  border-radius: 40px;
-  margin-top: 1.5em;
-  cursor: pointer;
-  text-decoration: none;
-  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 1.15rem;
-  line-height: 2.5rem;
   color: var(--text);
 }
 
@@ -474,17 +505,6 @@ div.socialnet h2 {
   color: var(--mark-text2);
 }
 
-div.socialnet a {
-  text-decoration: none;
-  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.5625rem;
-  color: var(--mark-text2);
-  margin: 1em 0 1em 0.5em;
-}
-
 div.socialnet ul {
   margin: 0;
   padding: 0;
@@ -681,14 +701,14 @@ div.buttoncontact:hover {
     justify-content: center;
   }
 
-  div.navbar { /* ********* nav bar ********** */
+  nav.navbar { /* ********* nav bar ********** */
     display: flex;
     width: 100%;
     justify-content: center;
     background-color: var(--dark-bg);
   }
 
-  div.navbar ul {
+  nav.navbar ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -699,7 +719,7 @@ div.buttoncontact:hover {
     justify-content: space-between;
   }
 
-  div.navbar ul li a {
+  nav.navbar ul li a {
     text-decoration: none;
     font-family: 'Inconsolata', 'Times New Roman', Times, serif;
     font-style: normal;
@@ -710,7 +730,7 @@ div.buttoncontact:hover {
     color: var(--text);
   }
 
-  div.navbar ul li a:hover {
+  nav.navbar ul li a:hover {
     color: var(--mark-text2);
   }
 
@@ -862,6 +882,7 @@ div.buttoncontact:hover {
   div.topbar {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   div.logo {
@@ -873,7 +894,7 @@ div.buttoncontact:hover {
     margin-left: 5em;
   }
 
-  div.navbar {
+  nav.navbar {
     width: 50%;
   }
 

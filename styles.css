@@ -112,17 +112,14 @@ button.burger > span {
 }
 
 nav.navbar {
-  display: none;
-}
-
-.menu {
   background-color: #21201d;
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  display: none;
 }
 
-.menu ul {
+nav.navbar ul {
   list-style: none;
   margin: 4em auto;
   padding: 0;
@@ -131,7 +128,18 @@ nav.navbar {
   align-items: center;
 }
 
-.menu ul li {
+div.socialnet li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 50%;
+  margin-left: 2em;
+}
+
+nav.navbar ul li {
   margin: 3em auto;
 }
 
@@ -161,7 +169,7 @@ div.socialnet a {
   margin: 1em 0 1em 0.5em;
 }
 
-.menu ul li a {
+nav.navbar ul li a {
   text-decoration: none;
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
@@ -372,17 +380,6 @@ div.works ul { /* *********************** my works ******************* */
   align-items: center;
   margin: 0;
   padding: 0;
-}
-
-div.socialnet li {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 1;
-  width: 50%;
-  margin-left: 2em;
 }
 
 div.works ul li {
@@ -702,6 +699,7 @@ div.buttoncontact:hover {
   }
 
   nav.navbar { /* ********* nav bar ********** */
+    display: block;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -719,15 +717,8 @@ div.buttoncontact:hover {
     justify-content: space-between;
   }
 
-  nav.navbar ul li a {
-    text-decoration: none;
-    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 1.3125rem;
-    text-transform: capitalize;
-    color: var(--text);
+  nav.navbar ul li {
+    margin: 0;
   }
 
   nav.navbar ul li a:hover {
@@ -848,7 +839,7 @@ div.buttoncontact:hover {
     margin: auto;
   }
 
-  div.socialnet li {
+  div.socialnet ul li {
     width: 34%;
     margin: 0;
   }

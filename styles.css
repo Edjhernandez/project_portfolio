@@ -130,7 +130,10 @@ nav.navbar {
   border-bottom-right-radius: 10px;
   display: none;
   animation-name: slide-bottom;
-  animation-duration: 0.1s;
+  animation-duration: 1s;
+  position: absolute;
+  z-index: 997;
+  top: 3em;
 }
 
 nav.navbar ul {
@@ -155,6 +158,7 @@ div.socialnet li {
 
 nav.navbar ul li {
   margin: 3em auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 div.headline a {
@@ -562,6 +566,7 @@ div.formcontact h2 {
   font-size: 2rem;
   line-height: 2.4375rem;
   color: var(--mark-text2);
+  margin: 4em auto 2em auto;
 }
 
 input:-webkit-autofill {
@@ -729,6 +734,8 @@ div.buttoncontact:hover {
     width: 100%;
     justify-content: center;
     background-color: var(--dark-bg);
+    position: static;
+    animation: none;
   }
 
   nav.navbar ul {
@@ -908,7 +915,9 @@ div.buttoncontact:hover {
   }
 
   nav.navbar {
+    display: block;
     width: 50%;
+    position: static;
   }
 
   div.desk1 { /* *********** first view: headline and profileimage ************** */

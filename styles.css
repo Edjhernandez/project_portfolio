@@ -134,6 +134,9 @@ nav.navbar {
   position: absolute;
   z-index: 997;
   top: 3em;
+  overflow-y: scroll !important;
+  max-height: 80vh !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 nav.navbar ul {

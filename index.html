@@ -14,6 +14,7 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata&family=Jost&family=Poppins:wght@500&display=swap');
     </style>
+    
     <title>Portfolio Eduardo Hernández</title>
      <!--Google tag (gtag.js)--> 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TEJNCW6707"></script>
@@ -30,25 +31,33 @@
     <header>
 
         <div class = 'topbar'>
+
+          <div class="bar_mobile">
+
           <div class = 'logo'>
             <p>&lt;/E</p>
             <p>duardo</p>
             <p>&gt;</p>
           </div> 
-          <button aria-label="burgermenu">
-            <div></div>
-            <div></div>
-            <div></div>
+
+          <button class="burger" aria-label="burgermenu">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
           </button>
-          <div class="navbar">
+
+          </div>
+
+          <nav class="navbar">
             <ul>
               <li><a href='#aboutme'>About Me</a></li>
               <li><a href='#myskills'>My Skills</a></li>
               <li><a href='#myworks'>My Works</a></li>
               <li><a href=#contactome>Contacts</a></li>
             </ul>
-          </div>
+          </nav>
 
+          
         </div>
     
     </header>
@@ -192,9 +201,9 @@
 
     <footer>
 
-      <div class="formcontact">
+      <div class="formcontact" id="contactome">
         <h2>Make Contact</h2>
-        <div class="boxcontact" id="contactome">
+        <div class="boxcontact">
           <form id="formcontact" action="https://formspree.io/f/xknavray" method="post">
             <div class="identify">
               <div class="names">

@@ -6,9 +6,13 @@ const l3 = document.querySelector('.line3');
 const close = document.querySelector('main');
 const close2 = document.querySelector('footer');
 const menu = document.querySelectorAll('.navbar a');
-const btcard = document.querySelectorAll('.card button');
-const cardModal = document.querySelector('.container-popup');
-const btModal = document.querySelector('.popup button');
+const btcard1 = document.getElementById('work1');
+const btcard2 = document.getElementById('work2');
+const btcard3 = document.getElementById('work3');
+const cardModal1 = document.getElementById('popup1');
+const cardModal2 = document.getElementById('popup2');
+const cardModal3 = document.getElementById('popup3');
+const btModal = document.querySelectorAll('.popup button');
 
 btb.addEventListener('click', () => {
   l1.classList.toggle('activeline1');
@@ -50,12 +54,22 @@ for (let ii = 0; ii < menu.length; ii += 1) {
   });
 }
 
-for (let jj = 0; jj < btcard.length; jj += 1) {
-  btcard[jj].addEventListener('click', () => {
-    cardModal.style.display = 'flex';
+btcard1.addEventListener('click', () => {
+  cardModal1.style.display = 'flex';
+});
+
+btcard2.addEventListener('click', () => {
+  cardModal2.style.display = 'flex';
+});
+
+btcard3.addEventListener('click', () => {
+  cardModal3.style.display = 'flex';
+});
+
+for (let jj = 0; jj < btModal.length; jj += 1) {
+  btModal[jj].addEventListener('click', () => {
+    cardModal1.style.display = 'none';
+    cardModal2.style.display = 'none';
+    cardModal3.style.display = 'none';
   });
 }
-
-btModal.addEventListener('click', () => {
-  cardModal.style.display = 'none';
-});

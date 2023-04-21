@@ -190,7 +190,7 @@ div.socialnet a {
   margin: 1em 0 1em 0.5em;
 }
 
-div.popup a {
+div.popup a { /* ****** class for pop up modal ******** */
   text-decoration: none;
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
@@ -491,7 +491,7 @@ div.card button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-div.container-popup {
+div.container-popup { /* ********** modal ********** */
   display: none;
   justify-content: center;
   align-items: center;
@@ -513,6 +513,14 @@ div.popup {
   border: 2px solid var(--text);
   border-radius: 16px;
   margin: auto;
+}
+
+div.intomodal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
 }
 
 div.popup button {
@@ -538,6 +546,7 @@ div.popup button svg {
 div.popup img {
   width: 90%;
   max-width: 320px;
+  margin: 0 auto;
 }
 
 div.popup h2 {
@@ -567,9 +576,9 @@ div.popup p {
   font-size: 1.125rem;
   line-height: 1.125rem;
   color: var(--text);
-  margin: 0.5em auto;
   overflow: hidden;
   text-align: center;
+  margin: 1em;
 }
 
 div.contact { /* **************** footer / contact me ******************** */
@@ -794,6 +803,34 @@ div.card img:hover {
   opacity: 0.5;
 }
 
+@media screen and (orientation: landscape) { /* ****** mediaquery for mobile landscape ****** */
+
+  div.popup {
+    flex-direction: row;
+    margin: 3em auto 0 auto;
+    width: 90vw;
+    height: 80vh;
+    transform: scale(1);
+  }
+
+  div.popup button {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  div.popup img {
+    width: 37.5%;
+    margin: auto;
+    padding-left: 1em;
+  }
+
+  div.intomodal {
+    width: 50%;
+    margin: auto;
+  }
+}
+
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
 
   div.topbar button { /* ****** top bar ******** */
@@ -925,6 +962,22 @@ div.card img:hover {
   div.card { /* ************** my works **************** */
     width: 50%;
     max-width: 700px;
+  }
+
+  div.popup {
+    width: 70vw;
+    height: 70vh;
+  }
+
+  div.popup img {
+    width: 90%;
+    max-width: 500px;
+    margin: auto 1em;
+  }
+
+  div.popup p,
+  div.popup hr {
+    width: 60%;
   }
 
   div.invitecontactme { /* ******** invite to contact me ******** */
@@ -1077,6 +1130,16 @@ div.card img:hover {
   div.card {
     margin: 1em;
     width: 100%;
+  }
+
+  div.popup {
+    height: 85vh;
+  }
+
+  div.popup img {
+    min-width: 320px;
+    width: 50%;
+    margin-left: 2em;
   }
 
   div.boxcontact { /* *********** make contact ************* */

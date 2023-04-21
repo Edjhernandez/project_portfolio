@@ -6,6 +6,9 @@ const l3 = document.querySelector('.line3');
 const close = document.querySelector('main');
 const close2 = document.querySelector('footer');
 const menu = document.querySelectorAll('.navbar a');
+const btcard = document.querySelectorAll('.card button');
+const cardModal = document.querySelector('.container-popup');
+const btModal = document.querySelector('.popup button');
 
 btb.addEventListener('click', () => {
   l1.classList.toggle('activeline1');
@@ -46,3 +49,13 @@ for (let ii = 0; ii < menu.length; ii += 1) {
     }
   });
 }
+
+for (let jj = 0; jj < btcard.length; jj += 1) {
+  btcard[jj].addEventListener('click', () => {
+    cardModal.style.display = 'flex';
+  });
+}
+
+btModal.addEventListener('click', () => {
+  cardModal.style.display = 'none';
+});

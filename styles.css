@@ -531,7 +531,8 @@ div.popup button {
   justify-content: center;
   align-items: center;
   align-self: flex-end;
-  border: solid 2px red;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 2001;
 }
 
 div.popup button svg {
@@ -1133,10 +1134,11 @@ div.card img:hover {
 
   div.works ul {
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-    justify-content: flex-start;
   }
 
   div.card {

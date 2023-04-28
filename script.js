@@ -42,6 +42,33 @@ const cardContent = [
     linkWork: '#',
     linkDescrip: 'work3',
   },
+  {
+    Id: '3',
+    title: 'News Blog4',
+    techs: 'SCSS, JS',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    imgUrl: './images/Rectangle18@2x.webp',
+    linkWork: '#',
+    linkDescrip: 'work4',
+  },
+  {
+    Id: '4',
+    title: 'News Blog5',
+    techs: 'SCSS, JS',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    imgUrl: './images/Rectangle18@2x.webp',
+    linkWork: '#',
+    linkDescrip: 'work5',
+  },
+  {
+    Id: '5',
+    title: 'News Blog6',
+    techs: 'SCSS, JS',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    imgUrl: './images/Rectangle18@2x.webp',
+    linkWork: '#',
+    linkDescrip: 'work6',
+  },
 ];
 
 btb.addEventListener('click', () => {
@@ -97,7 +124,7 @@ cardContent.forEach((element) => {
 z.appendChild(fragment);
 
 document.addEventListener('click', (e) => {
-  if (e.target.matches('.card button') === true) {
+  if (e.target.matches('.card button')) {
     const index = e.target.id;
     template2.querySelector('img').setAttribute('src', cardContent[index].imgUrl);
     template2.querySelector('h2').textContent = cardContent[index].title;
@@ -111,7 +138,7 @@ document.addEventListener('click', (e) => {
     cardModal.style.display = 'flex';
   }
 
-  if (e.target.matches('.popup path') === true) {
+  if (e.target.matches('.popup button *')) {
     cardModal.style.display = 'none';
     while (zz.firstChild) {
       zz.removeChild(zz.firstChild);

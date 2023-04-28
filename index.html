@@ -171,97 +171,56 @@
         <div class="works">
       
           <ul>
-          <li>
-          <div class="card">
-          <h2>News Blog1</h2>
-          <h3>HTML, SCSS, JS</h3>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <button type="button" id="work1">See more&nbsp;&#8594;</button> 
-          <img src="./images/Rectangle18@2x.webp" alt="Work1 image">
-          </div>      
-          </li>
-        
-          <li>
-          <div class="card">
-          <h2 class="myskills">News Blog2</h2>
-          <h3>HTML, SCSS, JS</h3>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <button type="button" id="work2">See more&nbsp;&#8594;</button>
-          <img src="./images/Rectangle18@2x.webp" alt="Work1 image">
-          </div>
-          </li>
+            <template id = 'temp-work'>
+            <li>
 
-          <li>
-          <div class="card">
-          <h2 class="myskills">News Blog3</h2>
-          <h3>HTML, SCSS, JS</h3>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <button type="button" id="work3">See more&nbsp;&#8594;</button>
-          <img src="./images/Rectangle18@2x.webp" alt="Work1 image">
-          </div>
-          </li>
-      
+              
+              <div class="card">
+                <h2></h2>
+                <h3></h3>
+                <hr>
+                <p></p>
+                <button type="button">See more&nbsp;&#8594;</button> 
+                <img>
+                </div>     
+              
+            </li>
+          </template> 
+
+          
+
+
+
+
+
+
+
+
+
           </ul>
       
         </div>
       </div>
-
-      <div class="container-popup" id="popup1">
+      
+      <div class="container-popup">
+        <template id = 'temp-modal'>
         <div class="popup">
           <button type="button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
           <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.511,0 -10,4.489 -10,10c0,5.511 4.489,10 10,10c5.511,0 10,-4.489 10,-10c0,-5.511 -4.489,-10 -10,-10zM12,4c4.43012,0 8,3.56988 8,8c0,4.43012 -3.56988,8 -8,8c-4.43012,0 -8,-3.56988 -8,-8c0,-4.43012 3.56988,-8 8,-8zM8.70703,7.29297l-1.41406,1.41406l3.29297,3.29297l-3.29297,3.29297l1.41406,1.41406l3.29297,-3.29297l3.29297,3.29297l1.41406,-1.41406l-3.29297,-3.29297l3.29297,-3.29297l-1.41406,-1.41406l-3.29297,3.29297z"></path></g></g>
           </svg></button>
-          <img src="./images/Rectangle18@2x.webp" alt="Work1 image">    
+          <img>    
           <div class="intomodal">
-            <h2>News Blog1</h2>
-            <h3>HTML, SCSS, JS</h3>
+            <h2></h2>
+            <h3></h3>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#">Work1</a>
+            <p></p>
+            <a></a>
           </div>
         </div>
-      </div>
-
-      <div class="container-popup" id="popup2">
-        <div class="popup">
-          <button type="button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
-          <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.511,0 -10,4.489 -10,10c0,5.511 4.489,10 10,10c5.511,0 10,-4.489 10,-10c0,-5.511 -4.489,-10 -10,-10zM12,4c4.43012,0 8,3.56988 8,8c0,4.43012 -3.56988,8 -8,8c-4.43012,0 -8,-3.56988 -8,-8c0,-4.43012 3.56988,-8 8,-8zM8.70703,7.29297l-1.41406,1.41406l3.29297,3.29297l-3.29297,3.29297l1.41406,1.41406l3.29297,-3.29297l3.29297,3.29297l1.41406,-1.41406l-3.29297,-3.29297l3.29297,-3.29297l-1.41406,-1.41406l-3.29297,3.29297z"></path></g></g>
-          </svg></button>
-          <img src="./images/Rectangle18@2x.webp" alt="Work2 image">    
-          <div class="intomodal">
-            <h2>News Blog2</h2>
-            <h3>HTML, SCSS, JS</h3>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#">Work2</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-popup" id="popup3">
-        <div class="popup">
-          <button type="button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
-          <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.511,0 -10,4.489 -10,10c0,5.511 4.489,10 10,10c5.511,0 10,-4.489 10,-10c0,-5.511 -4.489,-10 -10,-10zM12,4c4.43012,0 8,3.56988 8,8c0,4.43012 -3.56988,8 -8,8c-4.43012,0 -8,-3.56988 -8,-8c0,-4.43012 3.56988,-8 8,-8zM8.70703,7.29297l-1.41406,1.41406l3.29297,3.29297l-3.29297,3.29297l1.41406,1.41406l3.29297,-3.29297l3.29297,3.29297l1.41406,-1.41406l-3.29297,-3.29297l3.29297,-3.29297l-1.41406,-1.41406l-3.29297,3.29297z"></path></g></g>
-          </svg></button>
-          <img src="./images/Rectangle18@2x.webp" alt="Work1 image">    
-          <div class="intomodal">
-            <h2>News Blog3</h2>
-            <h3>HTML, SCSS, JS</h3>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#">Work3</a>
-          </div>
-        </div>
-      </div>  
+      
+    </template>
+  </div>
+       
 
     </main>
 

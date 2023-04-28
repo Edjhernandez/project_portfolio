@@ -6,13 +6,43 @@ const l3 = document.querySelector('.line3');
 const close = document.querySelector('main');
 const close2 = document.querySelector('footer');
 const menu = document.querySelectorAll('.navbar a');
-const btcard1 = document.getElementById('work1');
-const btcard2 = document.getElementById('work2');
-const btcard3 = document.getElementById('work3');
-const cardModal1 = document.getElementById('popup1');
-const cardModal2 = document.getElementById('popup2');
-const cardModal3 = document.getElementById('popup3');
-const btModal = document.querySelectorAll('.popup button');
+const cardModal = document.querySelector('.container-popup');
+const template = document.getElementById('temp-work').content;
+const z = document.querySelector('.works > ul');
+const fragment = document.createDocumentFragment();
+const template2 = document.getElementById('temp-modal').content;
+const zz = document.querySelector('.container-popup');
+const fragment2 = document.createDocumentFragment();
+
+const cardContent = [
+  {
+    Id: '0',
+    title: 'News Blog1',
+    techs: 'HTML, SCSS, JS',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    imgUrl: './images/Rectangle18@2x.webp',
+    linkWork: '#',
+    linkDescrip: 'work1',
+  },
+  {
+    Id: '1',
+    title: 'News Blog2',
+    techs: 'HTML, SCSS, JS',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    imgUrl: './images/Rectangle18@2x.webp',
+    linkWork: '#',
+    linkDescrip: 'work2',
+  },
+  {
+    Id: '2',
+    title: 'News Blog3',
+    techs: 'SCSS, JS',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    imgUrl: './images/Rectangle18@2x.webp',
+    linkWork: '#',
+    linkDescrip: 'work3',
+  },
+];
 
 btb.addEventListener('click', () => {
   l1.classList.toggle('activeline1');
@@ -54,22 +84,37 @@ for (let ii = 0; ii < menu.length; ii += 1) {
   });
 }
 
-btcard1.addEventListener('click', () => {
-  cardModal1.style.display = 'flex';
+cardContent.forEach((element) => {
+  template.querySelector('h2').textContent = element.title;
+  template.querySelector('h3').textContent = element.techs;
+  template.querySelector('p').textContent = element.description;
+  template.querySelector('img').setAttribute('src', element.imgUrl);
+  template.querySelector('button').setAttribute('id', element.Id);
+  const clone = document.importNode(template, true);
+  fragment.appendChild(clone);
 });
 
-btcard2.addEventListener('click', () => {
-  cardModal2.style.display = 'flex';
-});
+z.appendChild(fragment);
 
-btcard3.addEventListener('click', () => {
-  cardModal3.style.display = 'flex';
-});
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.card button') === true) {
+    const index = e.target.id;
+    template2.querySelector('img').setAttribute('src', cardContent[index].imgUrl);
+    template2.querySelector('h2').textContent = cardContent[index].title;
+    template2.querySelector('h3').textContent = cardContent[index].techs;
+    template2.querySelector('p').textContent = cardContent[index].description;
+    template2.querySelector('a').textContent = cardContent[index].linkDescrip;
+    template2.querySelector('a').setAttribute('href', cardContent[index].linkWork);
+    const clone2 = document.importNode(template2, true);
+    fragment2.appendChild(clone2);
+    zz.appendChild(fragment2);
+    cardModal.style.display = 'flex';
+  }
 
-for (let jj = 0; jj < btModal.length; jj += 1) {
-  btModal[jj].addEventListener('click', () => {
-    cardModal1.style.display = 'none';
-    cardModal2.style.display = 'none';
-    cardModal3.style.display = 'none';
-  });
-}
+  if (e.target.matches('.popup path') === true) {
+    cardModal.style.display = 'none';
+    while (zz.firstChild) {
+      zz.removeChild(zz.firstChild);
+    }
+  }
+});

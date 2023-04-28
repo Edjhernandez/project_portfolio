@@ -8,10 +8,10 @@ const close2 = document.querySelector('footer');
 const menu = document.querySelectorAll('.navbar a');
 const cardModal = document.querySelector('.container-popup');
 const template = document.getElementById('temp-work').content;
-const z = document.querySelector('.works > ul');
+const insertCard = document.querySelector('.works > ul');
 const fragment = document.createDocumentFragment();
 const template2 = document.getElementById('temp-modal').content;
-const zz = document.querySelector('.container-popup');
+const insertModal = document.querySelector('.container-popup');
 const fragment2 = document.createDocumentFragment();
 
 const cardContent = [
@@ -121,7 +121,7 @@ cardContent.forEach((element) => {
   fragment.appendChild(clone);
 });
 
-z.appendChild(fragment);
+insertCard.appendChild(fragment);
 
 document.addEventListener('click', (e) => {
   if (e.target.matches('.card button')) {
@@ -134,14 +134,14 @@ document.addEventListener('click', (e) => {
     template2.querySelector('a').setAttribute('href', cardContent[index].linkWork);
     const clone2 = document.importNode(template2, true);
     fragment2.appendChild(clone2);
-    zz.appendChild(fragment2);
+    insertModal.appendChild(fragment2);
     cardModal.style.display = 'flex';
   }
 
   if (e.target.matches('.popup button *')) {
     cardModal.style.display = 'none';
-    while (zz.firstChild) {
-      zz.removeChild(zz.firstChild);
+    while (insertModal.firstChild) {
+      insertModal.removeChild(insertModal.firstChild);
     }
   }
 });

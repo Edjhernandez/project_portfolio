@@ -134,9 +134,6 @@ nav.navbar {
   position: absolute;
   z-index: 997;
   top: 3em;
-  overflow-y: scroll !important;
-  max-height: 80vh !important;
-  -webkit-overflow-scrolling: touch !important;
 }
 
 nav.navbar ul {
@@ -188,6 +185,17 @@ div.socialnet a {
   line-height: 1.5625rem;
   color: var(--mark-text2);
   margin: 1em 0 1em 0.5em;
+}
+
+div.popup a { /* ****** class for pop up modal ******** */
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5625rem;
+  color: var(--mark-text2);
+  margin: 1em auto;
 }
 
 nav.navbar ul li a {
@@ -354,6 +362,7 @@ div.skill {
   width: 60%;
   background: #21201d;
   border-radius: 0.625rem;
+  max-width: 340px;
 }
 
 div.skill svg {
@@ -417,12 +426,12 @@ div.card {
   justify-content: center;
   width: 80%;
   height: auto;
-  background: rgba(33, 32, 29, 0.98);
+  background: transparent;
   position: relative;
-  cursor: pointer;
   margin: 1em 0;
   min-width: 320px;
   max-height: 320px;
+  max-width: 320px;
 }
 
 div.card img {
@@ -474,6 +483,101 @@ div.card button {
   border-style: none;
   color: var(--text);
   margin-bottom: 0.75em;
+  z-index: 2;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div.container-popup { /* ********** modal ********** */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+div.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  background: #21201d;
+  border: 2px solid var(--text);
+  border-radius: 16px;
+  margin: auto;
+}
+
+div.intomodal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+}
+
+div.popup button {
+  margin: 1em;
+  padding: 0;
+  width: 3em;
+  height: 3em;
+  border-style: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 2001;
+}
+
+div.popup button svg {
+  mix-blend-mode: normal;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+div.popup img {
+  width: 90%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+div.popup h2 {
+  margin: 0.5em auto;
+}
+
+div.popup h3 {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+  margin: 0.1rem auto;
+}
+
+div.popup hr {
+  width: 90%;
+  margin: 0.5em auto;
+  border: 1px solid var(--mark-text1);
+}
+
+div.popup p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  color: var(--text);
+  overflow: hidden;
+  text-align: center;
+  margin: 1em;
 }
 
 div.contact { /* **************** footer / contact me ******************** */
@@ -680,39 +784,62 @@ div.skill:hover {
   100% { transform: translateY(-30px); }
 }
 
+@keyframes scale-up-center {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
 div.card:hover {
-  animation-name: slide-top;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes flicker {
-  0% { opacity: 1; }
-  61.99% { opacity: 1; }
-  62% { opacity: 0; }
-  63% { opacity: 0; }
-  63.01% { opacity: 1; }
-  67.99% { opacity: 1; }
-  68% { opacity: 0; }
-  79% { opacity: 0; }
-  79.01% { opacity: 1; }
-  100% { opacity: 0.1; }
-}
-
-div.card img:hover {
-  animation-name: flicker;
+  animation-name: scale-up-center;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
 }
 
-@keyframes rotate-horizontal-center { /* ******* for button contact me ******** */
-  0% { transform: rotateX(0); }
-  100% { transform: rotateX(-360deg); }
+div.card img:hover {
+  animation-name: scale-up-center;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0.5;
 }
 
-div.buttoncontact:hover {
-  animation-name: rotate-horizontal-center;
-  animation-duration: 1s;
+@media screen and (orientation: landscape) { /* ****** mediaquery for mobile landscape ****** */
+
+  nav.navbar {
+    max-height: 280px;
+  }
+
+  nav.navbar ul {
+    margin: 0.5em;
+  }
+
+  nav.navbar ul li {
+    margin: 1.5em;
+  }
+
+  div.popup {
+    flex-direction: row;
+    margin: 3em auto 0 auto;
+    width: 90vw;
+    height: 80vh;
+    transform: scale(1);
+  }
+
+  div.popup button {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  div.popup img {
+    width: 37.5%;
+    margin: auto;
+    padding-left: 1em;
+  }
+
+  div.intomodal {
+    width: 50%;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
@@ -846,6 +973,22 @@ div.buttoncontact:hover {
   div.card { /* ************** my works **************** */
     width: 50%;
     max-width: 700px;
+  }
+
+  div.popup {
+    width: 70vw;
+    height: 70vh;
+  }
+
+  div.popup img {
+    width: 90%;
+    max-width: 500px;
+    margin: auto 1em;
+  }
+
+  div.popup p,
+  div.popup hr {
+    width: 60%;
   }
 
   div.invitecontactme { /* ******** invite to contact me ******** */
@@ -991,13 +1134,27 @@ div.buttoncontact:hover {
 
   div.works ul {
     flex-direction: row;
-    width: 80%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
+    flex-wrap: wrap;
   }
 
   div.card {
     margin: 1em;
     width: 100%;
+    max-width: 320px;
+  }
+
+  div.popup {
+    height: 85vh;
+  }
+
+  div.popup img {
+    min-width: 320px;
+    width: 50%;
+    margin-left: 2em;
   }
 
   div.boxcontact { /* *********** make contact ************* */

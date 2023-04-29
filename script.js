@@ -13,6 +13,7 @@ const fragment = document.createDocumentFragment();
 const template2 = document.getElementById('temp-modal').content;
 const insertModal = document.querySelector('.container-popup');
 const fragment2 = document.createDocumentFragment();
+const inputs = document.querySelectorAll('.boxcontact [required]')
 
 const cardContent = [
   {
@@ -144,4 +145,13 @@ document.addEventListener('click', (e) => {
       insertModal.removeChild(insertModal.firstChild);
     }
   }
+});
+
+console.log(inputs);
+
+inputs.forEach(input => {
+  const span = document.createElement('span');
+  span.id = input.name;
+  span.textContent = input.title;
+  input.insertAdjacentElement('afterend',span);
 });

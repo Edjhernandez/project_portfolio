@@ -657,8 +657,11 @@ div.names {
   background: #21201d;
   border-radius: 0.625rem;
   width: 90%;
-  padding-top: 0.5em;
   margin: auto;
+}
+
+div.formcontact form {
+  padding: 1em;
 }
 
 div.identify,
@@ -681,9 +684,10 @@ input:-webkit-autofill {
   -webkit-text-fill-color: var(--text);
 }
 
-div.formcontact form input {
+div.formcontact form input,
+div.formcontact form textarea {
   width: 80%;
-  margin: 1em 0;
+  margin: 0;
   background-color: var(--dark-bg);
   border-style: none;
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
@@ -692,10 +696,7 @@ div.formcontact form input {
   font-size: 1rem;
   line-height: 1rem;
   color: var(--text);
-}
-
-div.formcontact form input#message {
-  height: 6em;
+  resize: none;
 }
 
 div.formcontact form label {
@@ -706,7 +707,22 @@ div.formcontact form label {
   line-height: 1rem;
   color: var(--text);
   align-self: flex-start;
+  margin: 0.5em 0;
   margin-left: 10%;
+}
+
+div.formcontact form span {
+  display: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  color: var(--mark-text2);
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
 }
 
 div.buttoncontact { /* ************* button contact me ************** */

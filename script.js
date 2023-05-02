@@ -13,7 +13,7 @@ const fragment = document.createDocumentFragment();
 const template2 = document.getElementById('temp-modal').content;
 const insertModal = document.querySelector('.container-popup');
 const fragment2 = document.createDocumentFragment();
-const inputs = document.querySelectorAll('.boxcontact input');
+const inputs = document.querySelectorAll('.boxcontact [required]');
 
 const cardContent = [
   {
@@ -129,7 +129,7 @@ inputs.forEach((input) => {
 });
 
 document.addEventListener('keyup', (e) => {
-  if (e.target.matches('.boxcontact input')) {
+  if (e.target.matches('.boxcontact [required]')) {
     const pattern = e.target.pattern || e.target.dataset.pattern;
     if (!RegExp(pattern).exec(e.target.value) && e.target.value !== '') {
       document.getElementById(e.target.name).classList.remove('hidden');

@@ -13,6 +13,7 @@ const fragment = document.createDocumentFragment();
 const template2 = document.getElementById('temp-modal').content;
 const insertModal = document.querySelector('.container-popup');
 const fragment2 = document.createDocumentFragment();
+const inputs = document.querySelectorAll('.boxcontact [required]');
 
 const cardContent = [
   {
@@ -41,33 +42,6 @@ const cardContent = [
     imgUrl: './images/Rectangle18@2x.webp',
     linkWork: '#',
     linkDescrip: 'work3',
-  },
-  {
-    Id: '3',
-    title: 'News Blog4',
-    techs: 'SCSS, JS',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imgUrl: './images/Rectangle18@2x.webp',
-    linkWork: '#',
-    linkDescrip: 'work4',
-  },
-  {
-    Id: '4',
-    title: 'News Blog5',
-    techs: 'SCSS, JS',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imgUrl: './images/Rectangle18@2x.webp',
-    linkWork: '#',
-    linkDescrip: 'work5',
-  },
-  {
-    Id: '5',
-    title: 'News Blog6',
-    techs: 'SCSS, JS',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    imgUrl: './images/Rectangle18@2x.webp',
-    linkWork: '#',
-    linkDescrip: 'work6',
   },
 ];
 
@@ -142,6 +116,25 @@ document.addEventListener('click', (e) => {
     cardModal.style.display = 'none';
     while (insertModal.firstChild) {
       insertModal.removeChild(insertModal.firstChild);
+    }
+  }
+});
+
+inputs.forEach((input) => {
+  const span = document.createElement('span');
+  span.id = input.name;
+  span.textContent = input.title;
+  span.classList.add('hidden');
+  input.insertAdjacentElement('afterend', span);
+});
+
+document.addEventListener('keyup', (e) => {
+  if (e.target.matches('.boxcontact [required]')) {
+    const pattern = e.target.pattern || e.target.dataset.pattern;
+    if (!RegExp(pattern).exec(e.target.value) && e.target.value !== '') {
+      document.getElementById(e.target.name).classList.remove('hidden');
+    } else {
+      document.getElementById(e.target.name).classList.add('hidden');
     }
   }
 });

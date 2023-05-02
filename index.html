@@ -57,7 +57,6 @@
             </ul>
           </nav>
 
-          
         </div>
     
     </header>
@@ -174,7 +173,6 @@
             <template id = 'temp-work'>
             <li>
 
-              
               <div class="card">
                 <h2></h2>
                 <h3></h3>
@@ -185,18 +183,7 @@
                 </div>     
               
             </li>
-          </template> 
-
-          
-
-
-
-
-
-
-
-
-
+            </template> 
           </ul>
       
         </div>
@@ -218,36 +205,39 @@
             <p></p>
             <a></a>
           </div>
-        </div>
+          </div>
       
-    </template>
-  </div>
+        </template>
+      </div>
        
-
     </main>
 
     <footer>
 
-      <div class="formcontact" id="contactome">
+      <div class="formcontact" id="contactome" action="https://formspree.io/f/xknavray" method="post">
         <h2>Make Contact</h2>
         <div class="boxcontact">
-          <form id="formcontact" action="https://formspree.io/f/xknavray" method="post">
+          <form id="formcontact" >
             <div class="identify">
               <div class="names">
                 <label for="name">Name</label>
-                <input name='name' id='name' type="text" maxlength="30" minlength="2" placeholder="Name" required>
+                <input name='name' type="text" maxlength="30" minlength="1" placeholder="Name" 
+                title='Please, only letters and empty spaces' pattern = '^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$' required>
               </div>
               <div class="names">
                 <label for="lastname">Last Name</label>
-                <input id='lastname' name="lastname" type="text" maxlength="30" minlength="2" placeholder="Last Name" required>
+                <input name="lastname" type="text" maxlength="30" minlength="1" placeholder="Last Name" 
+                title='Please, only letters and empty spaces' pattern = '^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$' required>
               </div>
               <div class="names">
                 <label for="email">email</label>
-                <input id='email' name="email" type="email" placeholder="email@email.com" required>
+                <input name="email" type="email" placeholder="email@email.com" 
+                title='Please, check your email address'  pattern = "^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
               </div>
             </div>
             <label for="message">Message</label>
-            <input id='message' name="message" type="text" maxlength="500" minlength="2" placeholder="Message &lt; 500 char" required>
+            <textarea name="message" type="text" cols='50' rows='5' maxlength="260" minlength="1" 
+            placeholder="Message &lt; 255 char" title='Please, do not exceed 255 chars' data-pattern="^.{1,255}$" required></textarea>
           </form>
         </div>
         <div class="buttoncontact">

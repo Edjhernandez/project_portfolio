@@ -712,7 +712,6 @@ div.formcontact form label {
 }
 
 div.formcontact form span {
-  display: none;
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
   font-weight: 400;
@@ -723,6 +722,10 @@ div.formcontact form span {
   margin: 0;
   padding: 0;
   margin-bottom: 1em;
+}
+
+.hidden {
+  display: none;
 }
 
 div.buttoncontact { /* ************* button contact me ************** */

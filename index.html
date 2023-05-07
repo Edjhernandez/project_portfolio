@@ -212,9 +212,9 @@
        
     </main>
 
-    <footer>
+    <footer> <!--action="https://formspree.io/f/xknavray" method="post"-->
 
-      <div class="formcontact" id="contactome" action="https://formspree.io/f/xknavray" method="post">
+      <div class="formcontact" id="contactome">
         <h2>Make Contact</h2>
         <div class="boxcontact">
           <form id="formcontact" >
@@ -232,12 +232,14 @@
               <div class="names">
                 <label for="email">email</label>
                 <input name="email" type="email" placeholder="email@email.com" 
-                title='Please, check your email address'  pattern = "^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                title='Please, check your email address'  pattern = "^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
               </div>
             </div>
+            <div class='messages'>
             <label for="message">Message</label>
-            <textarea name="message" type="text" cols='50' rows='5' maxlength="260" minlength="1" 
+            <textarea name="message" type="text" cols='50' rows='4' maxlength="260" minlength="1" 
             placeholder="Message &lt; 255 char" title='Please, do not exceed 255 chars' data-pattern="^.{1,255}$" required></textarea>
+            </div>
           </form>
         </div>
         <div class="buttoncontact">

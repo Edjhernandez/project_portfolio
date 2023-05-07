@@ -131,6 +131,7 @@ inputs.forEach((input) => {
 document.addEventListener('keyup', (e) => {
   if (e.target.matches('.boxcontact [required]')) {
     const pattern = e.target.pattern || e.target.dataset.pattern;
+    localStorage.setItem(e.target.name, e.target.value);
     if (!RegExp(pattern).exec(e.target.value) && e.target.value !== '') {
       document.getElementById(e.target.name).classList.remove('hidden');
     } else {
@@ -138,3 +139,19 @@ document.addEventListener('keyup', (e) => {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('name') || localStorage.getItem('lastname') || localStorage.getItem('email') || localStorage.getItem('message')) {
+    document.querySelector('[name=\'name\']').value = localStorage.getItem('name');
+    document.querySelector('[name=\'lastname\']').value = localStorage.getItem('lastname');
+    document.querySelector('[name=\'email\']').value = localStorage.getItem('email');
+    document.querySelector('[name=\'message\']').value = localStorage.getItem('message');
+  }
+});
+
+/*
+document.addEventListener('submit', (e) => {
+
+  e.preventDefault();
+  console.log('test');
+}); */

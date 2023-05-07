@@ -650,7 +650,8 @@ div.boxcontact {
 
 div.formcontact form,
 div.identify,
-div.names {
+div.names,
+div.messages {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -664,9 +665,18 @@ div.formcontact form {
   padding: 1em;
 }
 
-div.identify,
+div.identify {
+  width: 100%;
+}
+
 div.names {
   width: 100%;
+  justify-content: flex-start;
+  height: 5rem;
+}
+
+div.messages {
+  height: 8rem;
 }
 
 div.formcontact h2 {
@@ -699,6 +709,10 @@ div.formcontact form textarea {
   resize: none;
 }
 
+div.formcontact form textarea {
+  width: 90%;
+}
+
 div.formcontact form label {
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
   font-style: normal;
@@ -709,6 +723,10 @@ div.formcontact form label {
   align-self: flex-start;
   margin: 0.5em 0;
   margin-left: 10%;
+}
+
+form div.messages label {
+  margin-left: 5%;
 }
 
 div.formcontact form span {

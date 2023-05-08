@@ -141,17 +141,24 @@ document.addEventListener('keyup', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const names = document.querySelector('[name=\'name\']');
+  const lastNames = document.querySelector('[name=\'lastname\']');
+  const emails = document.querySelector('[name=\'email\']');
+  const messages = document.querySelector('[name=\'message\']');
+
   if (localStorage.getItem('name') || localStorage.getItem('lastname') || localStorage.getItem('email') || localStorage.getItem('message')) {
-    document.querySelector('[name=\'name\']').value = localStorage.getItem('name');
-    document.querySelector('[name=\'lastname\']').value = localStorage.getItem('lastname');
-    document.querySelector('[name=\'email\']').value = localStorage.getItem('email');
-    document.querySelector('[name=\'message\']').value = localStorage.getItem('message');
+    names.value = localStorage.getItem('name');
+    lastNames.value = localStorage.getItem('lastname');
+    emails.value = localStorage.getItem('email');
+    messages.value = localStorage.getItem('message');
+    const arrStorage = [names, lastNames, emails, messages];
+
+    arrStorage.forEach((input) => {
+      if (!RegExp(input.pattern).exec(input.value) && input.value !== '') {
+        document.getElementById(input.name).classList.remove('hidden');
+      } else {
+        document.getElementById(input.name).classList.add('hidden');
+      }
+    });
   }
 });
-
-/*
-document.addEventListener('submit', (e) => {
-
-  e.preventDefault();
-  console.log('test');
-}); */

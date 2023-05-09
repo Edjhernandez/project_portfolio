@@ -167,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-window.onbeforeunload = () => {
-  form.reset();
-};
-
 form.addEventListener('submit', () => {
   localStorage.clear();
+
+  window.onbeforeunload = () => {
+    form.reset();
+  };
 });

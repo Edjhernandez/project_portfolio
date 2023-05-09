@@ -747,6 +747,8 @@ div.formcontact form span {
   margin: 0;
   padding: 0;
   margin-bottom: 1em;
+  animation-name: scale-up-center2;
+  animation-duration: 1s;
 }
 
 .hidden {
@@ -795,7 +797,8 @@ div.buttoncontact button {
   100% { border: 1px solid #ff8303; }
 }
 
-div.headline a:hover { /* ***** button get resume ****** */
+div.headline a:hover, /* ***** button get resume ****** */
+div.buttoncontact button:hover {
   animation-name: shadow-inset-center;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -823,11 +826,6 @@ div.skill:hover {
   animation-duration: 0.9s;
 }
 
-@keyframes slide-top { /* ******** for my works *********** */
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-30px); }
-}
-
 @keyframes scale-up-center {
   0% { transform: scale(1); }
   100% { transform: scale(1.05); }
@@ -844,6 +842,11 @@ div.card img:hover {
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
   opacity: 0.5;
+}
+
+@keyframes scale-up-center2 {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.25); }
 }
 
 @media screen and (orientation: landscape) { /* ****** mediaquery for mobile landscape ****** */

@@ -14,6 +14,7 @@ const template2 = document.getElementById('temp-modal').content;
 const insertModal = document.querySelector('.container-popup');
 const fragment2 = document.createDocumentFragment();
 const inputs = document.querySelectorAll('.boxcontact [required]');
+const form = document.getElementById('formcontact');
 
 const cardContent = [
   {
@@ -90,6 +91,9 @@ cardContent.forEach((element) => {
   template.querySelector('h3').textContent = element.techs;
   template.querySelector('p').textContent = element.description;
   template.querySelector('img').setAttribute('src', element.imgUrl);
+  template.querySelector('img').setAttribute('alt', element.title);
+  template.querySelector('img').setAttribute('width', '320');
+  template.querySelector('img').setAttribute('height', '320');
   template.querySelector('button').setAttribute('id', element.Id);
   const clone = document.importNode(template, true);
   fragment.appendChild(clone);
@@ -161,4 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+});
+
+window.onbeforeunload = () => {
+  form.reset();
+};
+
+form.addEventListener('submit', () => {
+  localStorage.clear();
 });

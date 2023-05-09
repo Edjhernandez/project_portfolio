@@ -550,6 +550,13 @@ div.popup img {
 
 div.popup h2 {
   margin: 0.5em auto;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: var(--mark-text2);
 }
 
 div.popup h3 {

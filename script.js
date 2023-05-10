@@ -122,6 +122,13 @@ document.addEventListener('click', (e) => {
       insertModal.removeChild(insertModal.firstChild);
     }
   }
+
+  document.addEventListener('keypress', () => {
+    cardModal.style.display = 'none';
+    while (insertModal.firstChild) {
+      insertModal.removeChild(insertModal.firstChild);
+    }
+  });
 });
 
 inputs.forEach((input) => {

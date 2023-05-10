@@ -123,7 +123,7 @@ document.addEventListener('click', (e) => {
     }
   }
 
-  document.addEventListener('keypress', () => {
+  document.addEventListener('keydown', () => {
     cardModal.style.display = 'none';
     while (insertModal.firstChild) {
       insertModal.removeChild(insertModal.firstChild);
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const arrStorage = [names, lastNames, emails, messages];
 
     arrStorage.forEach((input) => {
-      if (!RegExp(input.pattern).exec(input.value) && input.value !== '') {
+      if ((!RegExp(input.pattern).exec(input.value) || !RegExp(input.dataset.pattern).exec(input.value)) && input.value !== '') {
         document.getElementById(input.name).classList.remove('hidden');
       } else {
         document.getElementById(input.name).classList.add('hidden');

@@ -14,6 +14,7 @@ const template2 = document.getElementById('temp-modal').content;
 const insertModal = document.querySelector('.container-popup');
 const fragment2 = document.createDocumentFragment();
 const inputs = document.querySelectorAll('.boxcontact [required]');
+const form = document.getElementById('formcontact');
 
 const cardContent = [
   {
@@ -90,6 +91,9 @@ cardContent.forEach((element) => {
   template.querySelector('h3').textContent = element.techs;
   template.querySelector('p').textContent = element.description;
   template.querySelector('img').setAttribute('src', element.imgUrl);
+  template.querySelector('img').setAttribute('alt', element.title);
+  template.querySelector('img').setAttribute('width', '320');
+  template.querySelector('img').setAttribute('height', '320');
   template.querySelector('button').setAttribute('id', element.Id);
   const clone = document.importNode(template, true);
   fragment.appendChild(clone);
@@ -118,6 +122,13 @@ document.addEventListener('click', (e) => {
       insertModal.removeChild(insertModal.firstChild);
     }
   }
+
+  document.addEventListener('keydown', () => {
+    cardModal.style.display = 'none';
+    while (insertModal.firstChild) {
+      insertModal.removeChild(insertModal.firstChild);
+    }
+  });
 });
 
 inputs.forEach((input) => {
@@ -131,10 +142,42 @@ inputs.forEach((input) => {
 document.addEventListener('keyup', (e) => {
   if (e.target.matches('.boxcontact [required]')) {
     const pattern = e.target.pattern || e.target.dataset.pattern;
+    localStorage.setItem(e.target.name, e.target.value);
     if (!RegExp(pattern).exec(e.target.value) && e.target.value !== '') {
       document.getElementById(e.target.name).classList.remove('hidden');
     } else {
       document.getElementById(e.target.name).classList.add('hidden');
     }
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const names = document.querySelector('[name=\'name\']');
+  const lastNames = document.querySelector('[name=\'lastname\']');
+  const emails = document.querySelector('[name=\'email\']');
+  const messages = document.querySelector('[name=\'message\']');
+
+  if (localStorage.getItem('name') || localStorage.getItem('lastname') || localStorage.getItem('email') || localStorage.getItem('message')) {
+    names.value = localStorage.getItem('name');
+    lastNames.value = localStorage.getItem('lastname');
+    emails.value = localStorage.getItem('email');
+    messages.value = localStorage.getItem('message');
+    const arrStorage = [names, lastNames, emails, messages];
+
+    arrStorage.forEach((input) => {
+      if ((!RegExp(input.pattern).exec(input.value) || !RegExp(input.dataset.pattern).exec(input.value)) && input.value !== '') {
+        document.getElementById(input.name).classList.remove('hidden');
+      } else {
+        document.getElementById(input.name).classList.add('hidden');
+      }
+    });
+  }
+});
+
+form.addEventListener('submit', () => {
+  localStorage.clear();
+
+  window.onbeforeunload = () => {
+    form.reset();
+  };
 });

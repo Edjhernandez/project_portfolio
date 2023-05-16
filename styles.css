@@ -53,6 +53,17 @@ div.topbar { /* **************** top bar with logo and burger menu *************
   z-index: 999;
   width: 100%;
   background-color: var(--dark-bg);
+  flex-wrap: wrap;
+}
+
+div.bar_mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 998;
+  background-color: var(--dark-bg);
+  width: 100%;
 }
 
 div.logo {
@@ -60,6 +71,7 @@ div.logo {
   flex-direction: row;
   margin-left: 0.5em;
   align-items: center;
+  z-index: 998;
 }
 
 div.logo p {
@@ -76,40 +88,126 @@ div.logo :nth-child(2) {
   color: var(--text);
 }
 
-button {
+button.burger {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 3.5rem;
-  height: 3rem;
+  height: 3.5rem;
   border: 0;
   background: transparent;
   gap: 0.65rem;
+  z-index: 998;
 }
 
-button > div {
+button.burger > span {
+  display: block;
   background: white;
   height: 4px;
-  width: 100%;
+  width: 93%;
   border-radius: 5px;
-  transition: all 0.5s;
-  transform-origin: left;
+  transition: all 0.25s;
+  transform-origin: 0;
 }
 
-button:hover div:first-child {
+.activeline1 {
   transform: rotate(45deg);
 }
 
-button:hover div:nth-child(2) {
+.activeline2 {
   opacity: 0;
+  margin-left: -3.5em;
 }
 
-button:hover div:last-child {
+.activeline3 {
   transform: rotate(-45deg);
 }
 
-div.navbar {
+nav.navbar {
+  background-color: #21201d;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   display: none;
+  animation-name: slide-bottom;
+  animation-duration: 1s;
+  position: absolute;
+  z-index: 997;
+  top: 3em;
+}
+
+nav.navbar ul {
+  list-style: none;
+  margin: 4em auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.socialnet li {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  width: 50%;
+  margin-left: 2em;
+}
+
+nav.navbar ul li {
+  margin: 3em auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div.headline a {
+  padding: 0.5em 1.5em;
+  background-color: #21201d;
+  border-radius: 40px;
+  margin-top: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 2.5rem;
+  color: var(--text);
+  border: 1px solid transparent;
+}
+
+div.socialnet a {
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5625rem;
+  color: var(--mark-text2);
+  margin: 1em 0 1em 0.5em;
+}
+
+div.popup a { /* ****** class for pop up modal ******** */
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.5625rem;
+  color: var(--mark-text2);
+  margin: 1em auto;
+}
+
+nav.navbar ul li a {
+  text-decoration: none;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3125rem;
+  text-transform: capitalize;
+  color: var(--text);
 }
 
 div.headline { /* **************** Presentation with name and description **************** */
@@ -144,21 +242,6 @@ div.headline :nth-child(3) {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 25px;
-  color: var(--text);
-}
-
-div.headline a {
-  padding: 0.5em 1.5em;
-  background-color: #21201d;
-  border-radius: 40px;
-  margin-top: 1.5em;
-  cursor: pointer;
-  text-decoration: none;
-  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 1.15rem;
-  line-height: 2.5rem;
   color: var(--text);
 }
 
@@ -280,6 +363,7 @@ div.skill {
   width: 60%;
   background: #21201d;
   border-radius: 0.625rem;
+  max-width: 340px;
 }
 
 div.skill svg {
@@ -329,17 +413,6 @@ div.works ul { /* *********************** my works ******************* */
   padding: 0;
 }
 
-div.socialnet li {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  flex-grow: 1;
-  width: 50%;
-  margin-left: 2em;
-}
-
 div.works ul li {
   list-style: none;
   display: flex;
@@ -354,12 +427,12 @@ div.card {
   justify-content: center;
   width: 80%;
   height: auto;
-  background: rgba(33, 32, 29, 0.98);
+  background: transparent;
   position: relative;
-  cursor: pointer;
   margin: 1em 0;
   min-width: 320px;
   max-height: 320px;
+  max-width: 320px;
 }
 
 div.card img {
@@ -411,6 +484,108 @@ div.card button {
   border-style: none;
   color: var(--text);
   margin-bottom: 0.75em;
+  z-index: 2;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div.container-popup { /* ********** modal ********** */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+div.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  background: #21201d;
+  border: 2px solid var(--text);
+  border-radius: 16px;
+  margin: auto;
+}
+
+div.intomodal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+}
+
+div.popup button {
+  margin: 1em;
+  padding: 0;
+  width: 3em;
+  height: 3em;
+  border-style: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  z-index: 2001;
+}
+
+div.popup button svg {
+  mix-blend-mode: normal;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+div.popup img {
+  width: 90%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+div.popup h2 {
+  margin: 0.5em auto;
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.125rem;
+  text-align: center;
+  color: var(--mark-text2);
+}
+
+div.popup h3 {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--text);
+  margin: 0.1rem auto;
+}
+
+div.popup hr {
+  width: 90%;
+  margin: 0.5em auto;
+  border: 1px solid var(--mark-text1);
+}
+
+div.popup p {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  color: var(--text);
+  overflow: hidden;
+  text-align: center;
+  margin: 1em;
 }
 
 div.contact { /* **************** footer / contact me ******************** */
@@ -460,17 +635,6 @@ div.socialnet h2 {
   color: var(--mark-text2);
 }
 
-div.socialnet a {
-  text-decoration: none;
-  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.5625rem;
-  color: var(--mark-text2);
-  margin: 1em 0 1em 0.5em;
-}
-
 div.socialnet ul {
   margin: 0;
   padding: 0;
@@ -494,20 +658,33 @@ div.boxcontact {
 
 div.formcontact form,
 div.identify,
-div.names {
+div.names,
+div.messages {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #21201d;
   border-radius: 0.625rem;
   width: 90%;
-  padding-top: 0.5em;
   margin: auto;
 }
 
-div.identify,
+div.formcontact form {
+  padding: 1em;
+}
+
+div.identify {
+  width: 100%;
+}
+
 div.names {
   width: 100%;
+  justify-content: flex-start;
+  height: 5rem;
+}
+
+div.messages {
+  height: 8rem;
 }
 
 div.formcontact h2 {
@@ -517,6 +694,7 @@ div.formcontact h2 {
   font-size: 2rem;
   line-height: 2.4375rem;
   color: var(--mark-text2);
+  margin: 4em auto 2em auto;
 }
 
 input:-webkit-autofill {
@@ -524,9 +702,10 @@ input:-webkit-autofill {
   -webkit-text-fill-color: var(--text);
 }
 
-div.formcontact form input {
+div.formcontact form input,
+div.formcontact form textarea {
   width: 80%;
-  margin: 1em 0;
+  margin: 0;
   background-color: var(--dark-bg);
   border-style: none;
   font-family: 'Inconsolata', 'Times New Roman', Times, serif;
@@ -535,10 +714,11 @@ div.formcontact form input {
   font-size: 1rem;
   line-height: 1rem;
   color: var(--text);
+  resize: none;
 }
 
-div.formcontact form input#message {
-  height: 6em;
+div.formcontact form textarea {
+  width: 90%;
 }
 
 div.formcontact form label {
@@ -549,7 +729,31 @@ div.formcontact form label {
   line-height: 1rem;
   color: var(--text);
   align-self: flex-start;
+  margin: 0.5em 0;
   margin-left: 10%;
+}
+
+form div.messages label {
+  margin-left: 5%;
+}
+
+div.formcontact form span {
+  font-family: 'Inconsolata', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  color: var(--mark-text2);
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+  animation-name: scale-up-center2;
+  animation-duration: 1s;
+}
+
+.hidden {
+  display: none;
 }
 
 div.buttoncontact { /* ************* button contact me ************** */
@@ -577,14 +781,25 @@ div.buttoncontact button {
   align-items: center;
 }
 
-@keyframes shadow-inset-center { /* **************** animations & transitions ***************** */
+@keyframes slide-bottom { /* **************** animations & transitions ***************** */
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes slide-top {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+@keyframes shadow-inset-center {
   0% { box-shadow: inset 0 0 0 0 transparent; } /* ***** button get resume ****** */
   100% { box-shadow: inset 0 0 100px 2px rgba(0, 0, 0, 1); }
   100% { color: var(--mark-text2); }
   100% { border: 1px solid #ff8303; }
 }
 
-div.headline a:hover { /* ***** button get resume ****** */
+div.headline a:hover, /* ***** button get resume ****** */
+div.buttoncontact button:hover {
   animation-name: shadow-inset-center;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -612,44 +827,67 @@ div.skill:hover {
   animation-duration: 0.9s;
 }
 
-@keyframes slide-top { /* ******** for my works *********** */
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-30px); }
+@keyframes scale-up-center {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
 }
 
 div.card:hover {
-  animation-name: slide-top;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes flicker {
-  0% { opacity: 1; }
-  61.99% { opacity: 1; }
-  62% { opacity: 0; }
-  63% { opacity: 0; }
-  63.01% { opacity: 1; }
-  67.99% { opacity: 1; }
-  68% { opacity: 0; }
-  79% { opacity: 0; }
-  79.01% { opacity: 1; }
-  100% { opacity: 0.1; }
-}
-
-div.card img:hover {
-  animation-name: flicker;
+  animation-name: scale-up-center;
   animation-duration: 0.8s;
   animation-fill-mode: forwards;
 }
 
-@keyframes rotate-horizontal-center { /* ******* for button contact me ******** */
-  0% { transform: rotateX(0); }
-  100% { transform: rotateX(-360deg); }
+div.card img:hover {
+  animation-name: scale-up-center;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0.5;
 }
 
-div.buttoncontact:hover {
-  animation-name: rotate-horizontal-center;
-  animation-duration: 1s;
+@keyframes scale-up-center2 {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.25); }
+}
+
+@media screen and (orientation: landscape) { /* ****** mediaquery for mobile landscape ****** */
+
+  nav.navbar {
+    max-height: 280px;
+  }
+
+  nav.navbar ul {
+    margin: 0.5em;
+  }
+
+  nav.navbar ul li {
+    margin: 1.5em;
+  }
+
+  div.popup {
+    flex-direction: row;
+    margin: 3em auto 0 auto;
+    width: 90vw;
+    height: 80vh;
+    transform: scale(1);
+  }
+
+  div.popup button {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  div.popup img {
+    width: 37.5%;
+    margin: auto;
+    padding-left: 1em;
+  }
+
+  div.intomodal {
+    width: 50%;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 420px) and (min-height: 420px) { /* ********* tablet version ********** */
@@ -658,7 +896,8 @@ div.buttoncontact:hover {
     display: none;
   }
 
-  div.topbar {
+  div.topbar,
+  div.bar_mobile {
     flex-direction: column;
   }
 
@@ -667,14 +906,17 @@ div.buttoncontact:hover {
     justify-content: center;
   }
 
-  div.navbar { /* ********* nav bar ********** */
+  nav.navbar { /* ********* nav bar ********** */
+    display: block;
     display: flex;
     width: 100%;
     justify-content: center;
     background-color: var(--dark-bg);
+    position: static;
+    animation: none;
   }
 
-  div.navbar ul {
+  nav.navbar ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -685,18 +927,11 @@ div.buttoncontact:hover {
     justify-content: space-between;
   }
 
-  div.navbar ul li a {
-    text-decoration: none;
-    font-family: 'Inconsolata', 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 1.3125rem;
-    text-transform: capitalize;
-    color: var(--text);
+  nav.navbar ul li {
+    margin: 0;
   }
 
-  div.navbar ul li a:hover {
+  nav.navbar ul li a:hover {
     color: var(--mark-text2);
   }
 
@@ -788,6 +1023,22 @@ div.buttoncontact:hover {
     max-width: 700px;
   }
 
+  div.popup {
+    width: 70vw;
+    height: 70vh;
+  }
+
+  div.popup img {
+    width: 90%;
+    max-width: 500px;
+    margin: auto 1em;
+  }
+
+  div.popup p,
+  div.popup hr {
+    width: 60%;
+  }
+
   div.invitecontactme { /* ******** invite to contact me ******** */
     width: 100%;
     max-width: 739px;
@@ -814,7 +1065,7 @@ div.buttoncontact:hover {
     margin: auto;
   }
 
-  div.socialnet li {
+  div.socialnet ul li {
     width: 34%;
     margin: 0;
   }
@@ -848,19 +1099,19 @@ div.buttoncontact:hover {
   div.topbar {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
-  div.logo {
+  div.logo,
+  div.bar_mobile {
     width: 50%;
     justify-content: flex-start;
   }
 
-  div.logo :first-child {
-    margin-left: 5em;
-  }
-
-  div.navbar {
+  nav.navbar {
+    display: block;
     width: 50%;
+    position: static;
   }
 
   div.desk1 { /* *********** first view: headline and profileimage ************** */
@@ -931,13 +1182,27 @@ div.buttoncontact:hover {
 
   div.works ul {
     flex-direction: row;
-    width: 80%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
+    flex-wrap: wrap;
   }
 
   div.card {
     margin: 1em;
     width: 100%;
+    max-width: 320px;
+  }
+
+  div.popup {
+    height: 85vh;
+  }
+
+  div.popup img {
+    min-width: 320px;
+    width: 50%;
+    margin-left: 2em;
   }
 
   div.boxcontact { /* *********** make contact ************* */
